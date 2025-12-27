@@ -1,0 +1,248 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar Styles */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #F1F5F9;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+@layer utilities {
+  .text-candidate-title {
+    font-size: 16px;
+    color: #333333;
+  }
+  
+  .text-section-label {
+    font-size: 12px;
+    color: #333333;
+  }
+  
+  .text-skill-tag {
+    font-size: 12px;
+    font-weight: 700;
+    color: #007BFF;
+  }
+  
+  .text-action-link {
+    font-size: 12px;
+    color: #1E90FF;
+  }
+
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .hero-bottom-waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 700px;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  .hero-bottom-waves::before,
+  .hero-bottom-waves::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat-x;
+    animation: wave-move 25s linear infinite;
+  }
+
+  .hero-bottom-waves::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 700' preserveAspectRatio='none'%3E%3Cpath fill='%23dbeafe' fill-opacity='0.7' d='M0,550 Q150,500 300,550 T600,550 T900,550 T1200,550 L1200,700 L0,700 Z'/%3E%3Cpath fill='%23bfdbfe' fill-opacity='0.5' d='M0,600 Q150,550 300,600 T600,600 T900,600 T1200,600 L1200,700 L0,700 Z'/%3E%3Cpath fill='%2393c5fd' fill-opacity='0.3' d='M0,500 Q150,450 300,500 T600,500 T900,500 T1200,500 L1200,700 L0,700 Z'/%3E%3C/svg%3E");
+    background-size: 1200px 700px;
+    animation-duration: 25s;
+  }
+
+  .hero-bottom-waves::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 700' preserveAspectRatio='none'%3E%3Cpath fill='%23bfdbfe' fill-opacity='0.4' d='M0,530 Q200,480 400,530 T800,530 T1200,530 L1200,700 L0,700 Z'/%3E%3Cpath fill='%2393c5fd' fill-opacity='0.25' d='M0,570 Q200,520 400,570 T800,570 T1200,570 L1200,700 L0,700 Z'/%3E%3C/svg%3E");
+    background-size: 1200px 700px;
+    animation-duration: 30s;
+    animation-direction: reverse;
+  }
+
+  @keyframes wave-move {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Custom Scrollbar for Form */
+  .form-scroll::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .form-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+
+  .form-scroll::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+  }
+
+  .form-scroll::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+}
+
+/* Notification Card Styles - Adapted for light theme */
+.notification-card {
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 8rem;
+  background: #f8f9fa;
+  border-radius: 1rem;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  --gradient: linear-gradient(to bottom, #007BFF, #1E90FF, #007BFF);
+  --color: #007BFF;
+  transition: all 300ms ease;
+}
+
+.notification-card:before {
+  position: absolute;
+  content: "";
+  inset: 0.0625rem;
+  border-radius: 0.9375rem;
+  background: #ffffff;
+  z-index: 2;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.notification-card:after {
+  position: absolute;
+  content: "";
+  width: 0.25rem;
+  inset: 0.65rem auto 0.65rem 0.5rem;
+  border-radius: 0.125rem;
+  background: var(--gradient);
+  transition: transform 300ms ease;
+  z-index: 4;
+}
+
+.notification-card:hover:after {
+  transform: translateX(0.15rem);
+}
+
+.notititle {
+  color: var(--color);
+  padding: 0.65rem 0.25rem 0.4rem 1.25rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: transform 300ms ease;
+  z-index: 5;
+  position: relative;
+}
+
+.notification-card:hover .notititle {
+  transform: translateX(0.15rem);
+}
+
+.notibody {
+  color: #666666;
+  padding: 0 1.25rem 1rem 1.25rem;
+  transition: transform 300ms ease;
+  z-index: 5;
+  position: relative;
+  flex-grow: 1;
+}
+
+.notification-card:hover .notibody {
+  transform: translateX(0.25rem);
+}
+
+.notiglow,
+.notiborderglow {
+  position: absolute;
+  width: 20rem;
+  height: 20rem;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle closest-side at center, rgba(0, 123, 255, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.notiglow {
+  z-index: 3;
+}
+
+.notiborderglow {
+  z-index: 1;
+}
+
+.notification-card:hover .notiglow {
+  opacity: 0.2;
+}
+
+.notification-card:hover .notiborderglow {
+  opacity: 0.15;
+}
+
+.notification-icon {
+  position: absolute;
+  top: 0.65rem;
+  right: 1rem;
+  z-index: 5;
+  color: var(--color);
+  transition: transform 300ms ease;
+}
+
+.notification-card:hover .notification-icon {
+  transform: translateX(-0.15rem) scale(1.05);
+}
+
