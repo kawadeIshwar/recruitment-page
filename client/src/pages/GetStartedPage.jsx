@@ -153,7 +153,7 @@ const GetStartedPage = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white py-6 sm:py-8 md:py-12 px-4 sm:px-6 lg:px-8">
       {toast && (
         <Toast
           message={toast.message}
@@ -205,7 +205,7 @@ const GetStartedPage = () => {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -20 }}
           transition={{ duration: 0.3 }}
-          className="bg-white rounded-xl shadow-lg p-8"
+          className="bg-white rounded-xl shadow-lg p-4 sm:p-6 md:p-8"
         >
           <AnimatePresence mode="wait">
             {step === 1 && (
@@ -215,12 +215,12 @@ const GetStartedPage = () => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
               >
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Personal Details</h2>
-                <p className="text-sm text-gray-600 mb-8">Tell us about yourself</p>
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-1.5 sm:mb-2">Personal Details</h2>
+                <p className="text-xs sm:text-sm text-gray-600 mb-6 sm:mb-8">Tell us about yourself</p>
 
-                <div className="space-y-6">
+                <div className="space-y-4 sm:space-y-5 md:space-y-6">
                   <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="firstName" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                       First Name *
                     </label>
                     <input
@@ -228,14 +228,14 @@ const GetStartedPage = () => {
                       type="text"
                       value={firstName}
                       onChange={(e) => setFirstName(e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                      className="w-full px-3 py-2.5 sm:px-4 sm:py-3 md:px-5 md:py-3.5 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                       placeholder="Enter your first name"
                       required
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="lastName" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                       Last Name *
                     </label>
                     <input
@@ -243,14 +243,14 @@ const GetStartedPage = () => {
                       type="text"
                       value={lastName}
                       onChange={(e) => setLastName(e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                      className="w-full px-3 py-2.5 sm:px-4 sm:py-3 md:px-5 md:py-3.5 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                       placeholder="Enter your last name"
                       required
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="designation" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="designation" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                       Designation *
                     </label>
                     <input
@@ -258,7 +258,7 @@ const GetStartedPage = () => {
                       type="text"
                       value={designation}
                       onChange={(e) => setDesignation(e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                      className="w-full px-3 py-2.5 sm:px-4 sm:py-3 md:px-5 md:py-3.5 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                       placeholder="e.g., HR Manager, Recruiter"
                       required
                     />
@@ -268,7 +268,7 @@ const GetStartedPage = () => {
                     <button
                       onClick={handleNext}
                       disabled={!firstName || !lastName || !designation}
-                      className="px-8 py-3 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition-all duration-200 hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 bg-primary hover:bg-primary-dark text-white text-sm sm:text-base font-semibold rounded-lg transition-all duration-200 hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       Next
                     </button>
@@ -284,12 +284,12 @@ const GetStartedPage = () => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
               >
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Business Details</h2>
-                <p className="text-sm text-gray-600 mb-8">Tell us about your business</p>
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-1.5 sm:mb-2">Business Details</h2>
+                <p className="text-xs sm:text-sm text-gray-600 mb-6 sm:mb-8">Tell us about your business</p>
 
-                <div className="space-y-6">
+                <div className="space-y-4 sm:space-y-5 md:space-y-6">
                   <div>
-                    <label htmlFor="businessName" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="businessName" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                       Business Name / Company Name *
                     </label>
                     <input
@@ -297,14 +297,14 @@ const GetStartedPage = () => {
                       type="text"
                       value={businessName}
                       onChange={(e) => setBusinessName(e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                      className="w-full px-3 py-2.5 sm:px-4 sm:py-3 md:px-5 md:py-3.5 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                       placeholder="Enter business name"
                       required
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="businessPhone" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="businessPhone" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                       Business Phone Number *
                     </label>
                     <input
@@ -312,7 +312,7 @@ const GetStartedPage = () => {
                       type="tel"
                       value={businessPhone}
                       onChange={(e) => setBusinessPhone(e.target.value.replace(/\D/g, '').slice(0, 10))}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                      className="w-full px-3 py-2.5 sm:px-4 sm:py-3 md:px-5 md:py-3.5 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                       placeholder="Enter 10-digit phone number"
                       maxLength={10}
                       required
@@ -320,14 +320,14 @@ const GetStartedPage = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="businessType" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="businessType" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                       Type of Business *
                     </label>
                     <select
                       id="businessType"
                       value={businessType}
                       onChange={(e) => setBusinessType(e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                      className="w-full px-3 py-2.5 sm:px-4 sm:py-3 md:px-5 md:py-3.5 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                       required
                     >
                       <option value="">Select business type</option>
@@ -362,7 +362,7 @@ const GetStartedPage = () => {
                       animate={{ opacity: 1, height: 'auto' }}
                       exit={{ opacity: 0, height: 0 }}
                     >
-                      <label htmlFor="websiteUrl" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="websiteUrl" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                         Website URL *
                       </label>
                       <input
@@ -370,23 +370,23 @@ const GetStartedPage = () => {
                         type="url"
                         value={websiteUrl}
                         onChange={(e) => setWebsiteUrl(e.target.value)}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                        className="w-full px-3 py-2.5 sm:px-4 sm:py-3 md:px-5 md:py-3.5 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                         placeholder="https://example.com"
                       />
                     </motion.div>
                   )}
 
-                  <div className="flex justify-between">
+                  <div className="flex flex-col sm:flex-row justify-between gap-2 sm:gap-0">
                     <button
                       onClick={handleBack}
-                      className="px-8 py-3 border border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-all"
+                      className="w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 border border-gray-300 text-gray-700 text-sm sm:text-base font-semibold rounded-lg hover:bg-gray-50 transition-all"
                     >
                       Back
                     </button>
                     <button
                       onClick={handleNext}
                       disabled={!businessName || !businessPhone || !businessType || (hasWebsite && !websiteUrl)}
-                      className="px-8 py-3 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition-all duration-200 hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 bg-primary hover:bg-primary-dark text-white text-sm sm:text-base font-semibold rounded-lg transition-all duration-200 hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       Next
                     </button>
@@ -402,16 +402,16 @@ const GetStartedPage = () => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
               >
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">GST / PAN Verification</h2>
-                <p className="text-sm text-gray-600 mb-8">Verify your business credentials</p>
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-1.5 sm:mb-2">GST / PAN Verification</h2>
+                <p className="text-xs sm:text-sm text-gray-600 mb-6 sm:mb-8">Verify your business credentials</p>
 
-                <div className="space-y-6">
+                <div className="space-y-4 sm:space-y-5 md:space-y-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-4">
+                    <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-3 sm:mb-4">
                       Do you have GST or Business PAN? *
                     </label>
-                    <div className="space-y-3">
-                      <label className="flex items-center space-x-3 cursor-pointer">
+                    <div className="space-y-2 sm:space-y-3">
+                      <label className="flex items-center space-x-2 sm:space-x-3 cursor-pointer">
                         <input
                           type="radio"
                           name="verificationType"
@@ -422,11 +422,11 @@ const GetStartedPage = () => {
                             setGstPanNumber('')
                             setIsValidated(false)
                           }}
-                          className="w-5 h-5 text-primary border-gray-300 focus:ring-primary"
+                          className="w-4 h-4 sm:w-5 sm:h-5 text-primary border-gray-300 focus:ring-primary"
                         />
-                        <span className="text-sm text-gray-700">GST Number</span>
+                        <span className="text-xs sm:text-sm text-gray-700">GST Number</span>
                       </label>
-                      <label className="flex items-center space-x-3 cursor-pointer">
+                      <label className="flex items-center space-x-2 sm:space-x-3 cursor-pointer">
                         <input
                           type="radio"
                           name="verificationType"
@@ -437,9 +437,9 @@ const GetStartedPage = () => {
                             setGstPanNumber('')
                             setIsValidated(false)
                           }}
-                          className="w-5 h-5 text-primary border-gray-300 focus:ring-primary"
+                          className="w-4 h-4 sm:w-5 sm:h-5 text-primary border-gray-300 focus:ring-primary"
                         />
-                        <span className="text-sm text-gray-700">PAN Number</span>
+                        <span className="text-xs sm:text-sm text-gray-700">PAN Number</span>
                       </label>
                     </div>
                   </div>
@@ -449,10 +449,10 @@ const GetStartedPage = () => {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                     >
-                      <label htmlFor="gstPanNumber" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="gstPanNumber" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                         {verificationType} *
                       </label>
-                      <div className="flex space-x-3">
+                      <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                         <input
                           id="gstPanNumber"
                           type="text"
@@ -461,14 +461,14 @@ const GetStartedPage = () => {
                             setGstPanNumber(e.target.value.toUpperCase())
                             setIsValidated(false)
                           }}
-                          className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                          className="flex-1 px-3 py-2.5 sm:px-4 sm:py-3 md:px-5 md:py-3.5 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                           placeholder={`Enter ${verificationType}`}
                           disabled={isValidated}
                         />
                         <button
                           onClick={handleValidateGSTPAN}
                           disabled={loading || !gstPanNumber || isValidated}
-                          className="px-6 py-3 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition-all duration-200 hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+                          className="px-4 py-2.5 sm:px-6 sm:py-3 bg-primary hover:bg-primary-dark text-white text-xs sm:text-sm font-semibold rounded-lg transition-all duration-200 hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
                         >
                           {loading ? 'Validating...' : isValidated ? '✓ Validated' : 'Validate'}
                         </button>
@@ -488,17 +488,17 @@ const GetStartedPage = () => {
                     </motion.div>
                   )}
 
-                  <div className="flex justify-between">
+                  <div className="flex flex-col sm:flex-row justify-between gap-2 sm:gap-0">
                     <button
                       onClick={handleBack}
-                      className="px-8 py-3 border border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-all"
+                      className="w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 border border-gray-300 text-gray-700 text-sm sm:text-base font-semibold rounded-lg hover:bg-gray-50 transition-all"
                     >
                       Back
                     </button>
                     <button
                       onClick={handleNext}
                       disabled={!verificationType || !gstPanNumber || !isValidated}
-                      className="px-8 py-3 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition-all duration-200 hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 bg-primary hover:bg-primary-dark text-white text-sm sm:text-base font-semibold rounded-lg transition-all duration-200 hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       Next
                     </button>
@@ -514,28 +514,28 @@ const GetStartedPage = () => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
               >
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Business Email Verification</h2>
-                <p className="text-sm text-gray-600 mb-8">Verify your business email address</p>
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-1.5 sm:mb-2">Business Email Verification</h2>
+                <p className="text-xs sm:text-sm text-gray-600 mb-6 sm:mb-8">Verify your business email address</p>
 
-                <div className="space-y-6">
+                <div className="space-y-4 sm:space-y-5 md:space-y-6">
                   <div>
-                    <label htmlFor="businessEmail" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="businessEmail" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                       Business Email *
                     </label>
-                    <div className="flex space-x-3">
+                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                       <input
                         id="businessEmail"
                         type="email"
                         value={businessEmail}
                         onChange={(e) => setBusinessEmail(e.target.value)}
-                        className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                        className="flex-1 px-3 py-2.5 sm:px-4 sm:py-3 md:px-5 md:py-3.5 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                         placeholder="Enter business email"
                         disabled={otpSent}
                       />
                       <button
                         onClick={handleSendOTP}
                         disabled={loading || !businessEmail || otpSent}
-                        className="px-6 py-3 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition-all duration-200 hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+                        className="px-4 py-2.5 sm:px-6 sm:py-3 bg-primary hover:bg-primary-dark text-white text-xs sm:text-sm font-semibold rounded-lg transition-all duration-200 hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
                       >
                         {loading ? 'Sending...' : otpSent ? 'OTP Sent' : 'Send OTP'}
                       </button>
@@ -546,10 +546,10 @@ const GetStartedPage = () => {
                     <motion.div
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="space-y-4"
+                      className="space-y-4 sm:space-y-5"
                     >
                       <div>
-                        <label htmlFor="otp" className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="otp" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                           Enter OTP *
                         </label>
                         <input
@@ -557,7 +557,7 @@ const GetStartedPage = () => {
                           type="text"
                           value={otp}
                           onChange={(e) => setOtp(e.target.value.replace(/\D/g, '').slice(0, 6))}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-center text-2xl tracking-widest"
+                          className="w-full px-3 py-2.5 sm:px-4 sm:py-3 md:px-5 md:py-3.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-center text-xl sm:text-2xl tracking-widest"
                           placeholder="000000"
                           maxLength={6}
                         />
@@ -581,17 +581,17 @@ const GetStartedPage = () => {
                     </motion.div>
                   )}
 
-                  <div className="flex justify-between">
+                  <div className="flex flex-col sm:flex-row justify-between gap-2 sm:gap-0">
                     <button
                       onClick={handleBack}
-                      className="px-8 py-3 border border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-all"
+                      className="w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 border border-gray-300 text-gray-700 text-sm sm:text-base font-semibold rounded-lg hover:bg-gray-50 transition-all"
                     >
                       Back
                     </button>
                     <button
                       onClick={handleVerifyOTP}
                       disabled={loading || !otpSent || otp.length !== 6}
-                      className="px-8 py-3 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition-all duration-200 hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 bg-primary hover:bg-primary-dark text-white text-sm sm:text-base font-semibold rounded-lg transition-all duration-200 hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {loading ? 'Verifying...' : 'Complete Registration'}
                     </button>

@@ -221,7 +221,7 @@ const LoginPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white py-6 sm:py-8 md:py-12 px-4 sm:px-6 lg:px-8">
       {toast && (
         <Toast
           message={toast.message}
@@ -235,17 +235,17 @@ const LoginPage = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="bg-white rounded-xl shadow-lg p-8"
+          className="bg-white rounded-xl shadow-lg p-4 sm:p-6 md:p-8"
           key={forgotPasswordStep || 'login'}
         >
           {forgotPasswordStep === null ? (
             <>
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">Welcome Back</h1>
-              <p className="text-sm text-gray-600 mb-8">Login to your recruiter account</p>
+                <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1.5 sm:mb-2">Welcome Back</h1>
+                <p className="text-xs sm:text-sm text-gray-600 mb-6 sm:mb-8">Login to your recruiter account</p>
 
-              <form onSubmit={handleLogin} className="space-y-6">
+              <form onSubmit={handleLogin} className="space-y-4 sm:space-y-5 md:space-y-6">
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                     Registered Email ID
                   </label>
                   <input
@@ -253,14 +253,14 @@ const LoginPage = () => {
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    className="w-full px-3 py-2.5 sm:px-4 sm:py-3 md:px-5 md:py-3.5 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                     placeholder="Enter your email"
                     required
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="password" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                     Password
                   </label>
                   <div className="relative">
@@ -269,14 +269,14 @@ const LoginPage = () => {
                       type={showPassword ? 'text' : 'password'}
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all pr-12"
+                      className="w-full px-3 py-2.5 sm:px-4 sm:py-3 md:px-5 md:py-3.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all pr-10 sm:pr-12 text-sm sm:text-base"
                       placeholder="Enter your password"
                       required
                     />
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
+                      className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
                       aria-label="Toggle password visibility"
                     >
                       {showPassword ? (
@@ -296,7 +296,7 @@ const LoginPage = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-3 px-4 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition-all duration-200 hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full py-2.5 sm:py-3 md:py-3.5 px-4 sm:px-5 bg-primary hover:bg-primary-dark text-white text-sm sm:text-base font-semibold rounded-lg transition-all duration-200 hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {loading ? 'Logging in...' : 'Login'}
                 </button>
@@ -324,12 +324,12 @@ const LoginPage = () => {
                 exit={{ opacity: 0, x: 20 }}
                 transition={{ duration: 0.3 }}
               >
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Forgot Password</h2>
-                <p className="text-sm text-gray-600 mb-8">Enter your registered email to receive OTP</p>
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-1.5 sm:mb-2">Forgot Password</h2>
+                <p className="text-xs sm:text-sm text-gray-600 mb-6 sm:mb-8">Enter your registered email to receive OTP</p>
 
-                <div className="space-y-6">
+                <div className="space-y-4 sm:space-y-5 md:space-y-6">
                   <div>
-                    <label htmlFor="forgot-email" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="forgot-email" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                       Email Address
                     </label>
                     <input
@@ -340,7 +340,7 @@ const LoginPage = () => {
                         setForgotEmail(e.target.value)
                         setEmailNotFound(false)
                       }}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                      className="w-full px-3 py-2.5 sm:px-4 sm:py-3 md:px-5 md:py-3.5 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                       placeholder="Enter your registered email"
                     />
                   </div>
@@ -379,14 +379,14 @@ const LoginPage = () => {
                     </motion.div>
                   )}
 
-                  <div className="flex space-x-4">
+                  <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
                     <button
                       type="button"
                       onClick={() => {
                         setForgotPasswordStep(null)
                         setEmailNotFound(false)
                       }}
-                      className="flex-1 py-3 px-4 border border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-all"
+                      className="flex-1 py-2.5 sm:py-3 px-4 sm:px-5 border border-gray-300 text-gray-700 text-sm sm:text-base font-semibold rounded-lg hover:bg-gray-50 transition-all"
                     >
                       Back to Login
                     </button>
@@ -394,7 +394,7 @@ const LoginPage = () => {
                       type="button"
                       onClick={handleForgotPassword}
                       disabled={loading}
-                      className="flex-1 py-3 px-4 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition-all duration-200 hover:shadow-md disabled:opacity-50"
+                      className="flex-1 py-2.5 sm:py-3 px-4 sm:px-5 bg-primary hover:bg-primary-dark text-white text-sm sm:text-base font-semibold rounded-lg transition-all duration-200 hover:shadow-md disabled:opacity-50"
                     >
                       {loading ? 'Validating...' : 'Generate OTP'}
                     </button>
@@ -411,14 +411,14 @@ const LoginPage = () => {
                 exit={{ opacity: 0, x: 20 }}
                 transition={{ duration: 0.3 }}
               >
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Verify OTP</h2>
-                <p className="text-sm text-gray-600 mb-8">
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-1.5 sm:mb-2">Verify OTP</h2>
+                <p className="text-xs sm:text-sm text-gray-600 mb-6 sm:mb-8">
                   Enter the 6-digit OTP sent to {forgotEmail}
                 </p>
 
-                <div className="space-y-6">
+                <div className="space-y-4 sm:space-y-5 md:space-y-6">
                   <div>
-                    <label htmlFor="otp" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="otp" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                       OTP
                     </label>
                     <input
@@ -426,7 +426,7 @@ const LoginPage = () => {
                       type="text"
                       value={otp}
                       onChange={(e) => setOtp(e.target.value.replace(/\D/g, '').slice(0, 6))}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-center text-2xl tracking-widest"
+                      className="w-full px-3 py-2.5 sm:px-4 sm:py-3 md:px-5 md:py-3.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-center text-xl sm:text-2xl tracking-widest"
                       placeholder="000000"
                       maxLength={6}
                     />
@@ -448,14 +448,14 @@ const LoginPage = () => {
                     )}
                   </div>
 
-                  <div className="flex space-x-4">
+                  <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
                     <button
                       type="button"
                       onClick={() => {
                         setForgotPasswordStep('email')
                         setOtp('')
                       }}
-                      className="flex-1 py-3 px-4 border border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-all"
+                      className="flex-1 py-2.5 sm:py-3 px-4 sm:px-5 border border-gray-300 text-gray-700 text-sm sm:text-base font-semibold rounded-lg hover:bg-gray-50 transition-all"
                     >
                       Back
                     </button>
@@ -463,7 +463,7 @@ const LoginPage = () => {
                       type="button"
                       onClick={handleVerifyOTP}
                       disabled={loading || otp.length !== 6}
-                      className="flex-1 py-3 px-4 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition-all duration-200 hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="flex-1 py-2.5 sm:py-3 px-4 sm:px-5 bg-primary hover:bg-primary-dark text-white text-sm sm:text-base font-semibold rounded-lg transition-all duration-200 hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {loading ? 'Verifying...' : 'Verify OTP'}
                     </button>
@@ -480,12 +480,12 @@ const LoginPage = () => {
                 exit={{ opacity: 0, x: 20 }}
                 transition={{ duration: 0.3 }}
               >
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Reset Password</h2>
-                <p className="text-sm text-gray-600 mb-8">Enter your new password</p>
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-1.5 sm:mb-2">Reset Password</h2>
+                <p className="text-xs sm:text-sm text-gray-600 mb-6 sm:mb-8">Enter your new password</p>
 
-                <div className="space-y-6">
+                <div className="space-y-4 sm:space-y-5 md:space-y-6">
                   <div>
-                    <label htmlFor="new-password" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="new-password" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                       New Password
                     </label>
                     <div className="relative">
@@ -494,13 +494,13 @@ const LoginPage = () => {
                         type={showNewPassword ? 'text' : 'password'}
                         value={newPassword}
                         onChange={(e) => setNewPassword(e.target.value)}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all pr-12"
+                        className="w-full px-3 py-2.5 sm:px-4 sm:py-3 md:px-5 md:py-3.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all pr-10 sm:pr-12 text-sm sm:text-base"
                         placeholder="Enter new password"
                       />
                       <button
                         type="button"
                         onClick={() => setShowNewPassword(!showNewPassword)}
-                        className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
+                        className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
                         aria-label="Toggle password visibility"
                       >
                         {showNewPassword ? (
@@ -518,7 +518,7 @@ const LoginPage = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="confirm-password" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="confirm-password" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                       Confirm Password
                     </label>
                     <div className="relative">
@@ -527,13 +527,13 @@ const LoginPage = () => {
                         type={showConfirmNewPassword ? 'text' : 'password'}
                         value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all pr-12"
+                        className="w-full px-3 py-2.5 sm:px-4 sm:py-3 md:px-5 md:py-3.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all pr-10 sm:pr-12 text-sm sm:text-base"
                         placeholder="Confirm new password"
                       />
                       <button
                         type="button"
                         onClick={() => setShowConfirmNewPassword(!showConfirmNewPassword)}
-                        className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
+                        className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
                         aria-label="Toggle password visibility"
                       >
                         {showConfirmNewPassword ? (
@@ -554,7 +554,7 @@ const LoginPage = () => {
                     type="button"
                     onClick={handleResetPassword}
                     disabled={loading || !newPassword || !confirmPassword}
-                    className="w-full py-3 px-4 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition-all duration-200 hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full py-2.5 sm:py-3 md:py-3.5 px-4 sm:px-5 bg-primary hover:bg-primary-dark text-white text-sm sm:text-base font-semibold rounded-lg transition-all duration-200 hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {loading ? 'Changing Password...' : 'Change Password'}
                   </button>

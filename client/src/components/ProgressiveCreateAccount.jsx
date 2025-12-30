@@ -472,7 +472,7 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
       <form onSubmit={handleSubmit} className="flex-1 flex flex-col min-h-0">
         <div 
           ref={scrollContainerRef} 
-          className="flex-1 overflow-y-auto overflow-x-hidden space-y-4 px-3 py-1 pb-10 custom-scrollbar"
+          className="flex-1 overflow-y-auto overflow-x-hidden space-y-4 sm:space-y-5 px-3 sm:px-4 py-1 sm:py-2 pb-8 sm:pb-10 custom-scrollbar"
           style={{
             scrollbarWidth: 'thin',
             scrollbarColor: '#CBD5E1 #F1F5F9'
@@ -487,15 +487,15 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
                 animate="animate"
                 exit="exit"
                 transition={{ duration: 0.25 }}
-                className="space-y-4 pb-4"
+                className="space-y-4 sm:space-y-5 pb-4 sm:pb-5"
               >
-                <div className="space-y-1">
-                  <p className="text-sm font-semibold text-slate-900">Personal Details</p>
-                  <p className="text-xs text-slate-500">Help us personalize your workspace.</p>
+                <div className="space-y-1 sm:space-y-1.5">
+                  <p className="text-sm sm:text-base font-semibold text-slate-900">Personal Details</p>
+                  <p className="text-xs sm:text-sm text-slate-500">Help us personalize your workspace.</p>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="space-y-1 min-w-0">
-                    <label className="text-xs font-medium text-slate-700">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  <div className="space-y-1.5 sm:space-y-2 min-w-0">
+                    <label className="text-xs sm:text-sm font-medium text-slate-700">
                       First Name <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -503,14 +503,14 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
                       value={formData.firstName}
                       onChange={handleChange}
                       placeholder="Alex"
-                      className={`w-full rounded-lg border px-3 py-2.5 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 transition ${
+                      className={`w-full rounded-lg border px-3 py-2.5 sm:px-4 sm:py-3 text-sm sm:text-base shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 transition ${
                         errors.firstName ? 'border-red-500 focus:ring-red-200' : 'border-slate-200 focus:ring-primary/30'
                       }`}
                     />
-                    {errors.firstName && <p className="text-xs text-red-500">{errors.firstName}</p>}
+                    {errors.firstName && <p className="text-xs sm:text-sm text-red-500 mt-1">{errors.firstName}</p>}
                   </div>
-                  <div className="space-y-1 min-w-0">
-                    <label className="text-xs font-medium text-slate-700">
+                  <div className="space-y-1.5 sm:space-y-2 min-w-0">
+                    <label className="text-xs sm:text-sm font-medium text-slate-700">
                       Last Name <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -518,17 +518,17 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
                       value={formData.lastName}
                       onChange={handleChange}
                       placeholder="Rivera"
-                      className={`w-full rounded-lg border px-3 py-2.5 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 transition ${
+                      className={`w-full rounded-lg border px-3 py-2.5 sm:px-4 sm:py-3 text-sm sm:text-base shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 transition ${
                         errors.lastName ? 'border-red-500 focus:ring-red-200' : 'border-slate-200 focus:ring-primary/30'
                       }`}
                     />
-                    {errors.lastName && <p className="text-xs text-red-500">{errors.lastName}</p>}
+                    {errors.lastName && <p className="text-xs sm:text-sm text-red-500 mt-1">{errors.lastName}</p>}
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="space-y-1 min-w-0">
-                    <label className="text-xs font-medium text-slate-700">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  <div className="space-y-1.5 sm:space-y-2 min-w-0">
+                    <label className="text-xs sm:text-sm font-medium text-slate-700">
                       Business Phone Number <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -536,16 +536,16 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
                       value={formData.phoneNumber}
                       onChange={handleChange}
                       placeholder="10-digit phone number"
-                      className={`w-full rounded-lg border px-3 py-2.5 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 transition ${
+                      className={`w-full rounded-lg border px-3 py-2.5 sm:px-4 sm:py-3 text-sm sm:text-base shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 transition ${
                         errors.phoneNumber
                           ? 'border-red-500 focus:ring-red-200'
                           : 'border-slate-200 focus:ring-primary/30'
                       }`}
                     />
-                    {errors.phoneNumber && <p className="text-xs text-red-500">{errors.phoneNumber}</p>}
+                    {errors.phoneNumber && <p className="text-xs sm:text-sm text-red-500 mt-1">{errors.phoneNumber}</p>}
                   </div>
-                  <div className="space-y-1 min-w-0">
-                    <label className="text-xs font-medium text-slate-700">
+                  <div className="space-y-1.5 sm:space-y-2 min-w-0">
+                    <label className="text-xs sm:text-sm font-medium text-slate-700">
                       Designation <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -553,13 +553,13 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
                       value={formData.designation}
                       onChange={handleChange}
                       placeholder="Talent Lead, HRBP, Founder"
-                      className={`w-full rounded-lg border px-3 py-2.5 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 transition ${
+                      className={`w-full rounded-lg border px-3 py-2.5 sm:px-4 sm:py-3 text-sm sm:text-base shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 transition ${
                         errors.designation
                           ? 'border-red-500 focus:ring-red-200'
                           : 'border-slate-200 focus:ring-primary/30'
                       }`}
                     />
-                    {errors.designation && <p className="text-xs text-red-500">{errors.designation}</p>}
+                    {errors.designation && <p className="text-xs sm:text-sm text-red-500 mt-1">{errors.designation}</p>}
                   </div>
                 </div>
               </motion.div>
@@ -573,11 +573,11 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
                 animate="animate"
                 exit="exit"
                 transition={{ duration: 0.25 }}
-                className="space-y-5 pb-4"
+                className="space-y-5 sm:space-y-6 pb-4 sm:pb-5"
               >
-                <div className="space-y-1">
-                  <p className="text-sm font-semibold text-slate-900">Business Details</p>
-                  <p className="text-xs text-slate-500">
+                <div className="space-y-1 sm:space-y-1.5">
+                  <p className="text-sm sm:text-base font-semibold text-slate-900">Business Details</p>
+                  <p className="text-xs sm:text-sm text-slate-500">
                     Start with verification so we can prefill and protect your account.
                   </p>
                 </div>
@@ -619,18 +619,18 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
                   </div>
                   {errors.gstPanType && <p className="text-xs text-red-500">{errors.gstPanType}</p>}
 
-                  <div className="space-y-2">
-                    <label className="text-xs font-medium text-slate-700">
+                  <div className="space-y-2 sm:space-y-2.5">
+                    <label className="text-xs sm:text-sm font-medium text-slate-700">
                       {formData.gstPanType} Number <span className="text-red-500">*</span>
                     </label>
-                    <div className="flex flex-col sm:flex-row gap-3">
+                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                       <div className="flex-1">
                         <input
                           name="gstPanNumber"
                           value={formData.gstPanNumber}
                           onChange={handleChange}
                           placeholder={formData.gstPanType === 'GST' ? '22ABCDE1234F1Z5' : 'ABCDE1234F'}
-                          className={`w-full rounded-lg border px-3 py-2.5 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 transition ${
+                          className={`w-full rounded-lg border px-3 py-2.5 sm:px-4 sm:py-3 text-sm sm:text-base shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 transition ${
                             errors.gstPanNumber || verificationStatus === 'error'
                               ? 'border-red-500 focus:ring-red-200'
                               : verificationStatus === 'success'
@@ -643,18 +643,18 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
                         type="button"
                         onClick={handleVerifyBusiness}
                         disabled={verificationStatus === 'pending' || !formData.gstPanNumber}
-                        className="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-[1px] disabled:cursor-not-allowed disabled:opacity-60 whitespace-nowrap"
+                        className="inline-flex items-center justify-center rounded-lg bg-primary px-3 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm font-semibold text-white shadow-sm transition hover:-translate-y-[1px] disabled:cursor-not-allowed disabled:opacity-60 whitespace-nowrap"
                       >
                         {verificationStatus === 'pending' ? 'Verifying...' : 'Verify'}
                       </button>
                     </div>
-                    {errors.gstPanNumber && <p className="text-xs text-red-500 mt-1">{errors.gstPanNumber}</p>}
+                    {errors.gstPanNumber && <p className="text-xs sm:text-sm text-red-500 mt-1">{errors.gstPanNumber}</p>}
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="space-y-1 min-w-0">
-                    <label className="text-xs font-medium text-slate-700">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  <div className="space-y-1.5 sm:space-y-2 min-w-0">
+                    <label className="text-xs sm:text-sm font-medium text-slate-700">
                       Type of Business <span className="text-red-500">*</span>
                     </label>
                     <select
@@ -662,7 +662,7 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
                       value={formData.businessType}
                       onChange={handleChange}
                       disabled={autoFillLocked}
-                      className={`w-full rounded-lg border px-3 py-2.5 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 transition ${
+                      className={`w-full rounded-lg border px-3 py-2.5 sm:px-4 sm:py-3 text-sm sm:text-base shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 transition ${
                         errors.businessType
                           ? 'border-red-500 focus:ring-red-200'
                           : 'border-slate-200 focus:ring-primary/30'
@@ -675,11 +675,11 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
                         </option>
                       ))}
                     </select>
-                    {errors.businessType && <p className="text-xs text-red-500">{errors.businessType}</p>}
+                    {errors.businessType && <p className="text-xs sm:text-sm text-red-500 mt-1">{errors.businessType}</p>}
                   </div>
 
-                  <div className="space-y-1 min-w-0">
-                    <label className="text-xs font-medium text-slate-700">
+                  <div className="space-y-1.5 sm:space-y-2 min-w-0">
+                    <label className="text-xs sm:text-sm font-medium text-slate-700">
                       Business / Company Name <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -688,40 +688,40 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
                       onChange={handleChange}
                       readOnly={autoFillLocked}
                       placeholder="Northbridge Talent Pvt Ltd"
-                      className={`w-full rounded-lg border px-3 py-2.5 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 transition ${
+                      className={`w-full rounded-lg border px-3 py-2.5 sm:px-4 sm:py-3 text-sm sm:text-base shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 transition ${
                         errors.businessName
                           ? 'border-red-500 focus:ring-red-200'
                           : 'border-slate-200 focus:ring-primary/30'
                       } ${autoFillLocked ? 'bg-slate-50 cursor-not-allowed' : ''}`}
                     />
-                    {errors.businessName && <p className="text-xs text-red-500">{errors.businessName}</p>}
+                    {errors.businessName && <p className="text-xs sm:text-sm text-red-500 mt-1">{errors.businessName}</p>}
                   </div>
                 </div>
 
                 {formData.registeredAddress && (
-                  <div className="space-y-1 min-w-0">
-                    <label className="text-xs font-medium text-slate-700">Registered Address (read-only)</label>
+                  <div className="space-y-1.5 sm:space-y-2 min-w-0">
+                    <label className="text-xs sm:text-sm font-medium text-slate-700">Registered Address (read-only)</label>
                     <textarea
                       value={formData.registeredAddress}
                       readOnly
                       rows={2}
-                      className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-700 shadow-sm resize-none"
+                      className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2.5 sm:px-4 sm:py-3 text-sm sm:text-base text-slate-700 shadow-sm resize-none"
                     />
                   </div>
                 )}
 
-                <div className="space-y-2">
-                  <p className="text-xs font-medium text-slate-700">Do you have a business website?</p>
-                  <div className="flex gap-4">
+                <div className="space-y-2 sm:space-y-2.5">
+                  <p className="text-xs sm:text-sm font-medium text-slate-700">Do you have a business website?</p>
+                  <div className="flex gap-3 sm:gap-4">
                     {['yes', 'no'].map((choice) => (
-                      <label key={choice} className="flex items-center gap-2 text-xs text-slate-700 cursor-pointer">
+                      <label key={choice} className="flex items-center gap-2 text-xs sm:text-sm text-slate-700 cursor-pointer">
                         <input
                           type="radio"
                           name="hasWebsite"
                           value={choice}
                           checked={formData.hasWebsite === choice}
                           onChange={handleChange}
-                          className="h-4 w-4 text-primary focus:ring-primary flex-shrink-0"
+                          className="h-4 w-4 sm:h-5 sm:w-5 text-primary focus:ring-primary flex-shrink-0"
                         />
                         <span className="whitespace-nowrap">{choice === 'yes' ? 'Yes' : 'No'}</span>
                       </label>
@@ -733,21 +733,21 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
                       animate={{ opacity: 1, height: 'auto' }}
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.2 }}
-                      className="space-y-1 pt-2 min-w-0"
+                      className="space-y-1.5 sm:space-y-2 pt-2 sm:pt-3 min-w-0"
                     >
-                      <label className="text-xs font-medium text-slate-700">Website URL</label>
+                      <label className="text-xs sm:text-sm font-medium text-slate-700">Website URL</label>
                       <input
                         name="websiteUrl"
                         value={formData.websiteUrl}
                         onChange={handleChange}
                         placeholder="https://company.com"
-                        className={`w-full rounded-lg border px-3 py-2.5 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 transition ${
+                        className={`w-full rounded-lg border px-3 py-2.5 sm:px-4 sm:py-3 text-sm sm:text-base shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 transition ${
                           errors.websiteUrl
                             ? 'border-red-500 focus:ring-red-200'
                             : 'border-slate-200 focus:ring-primary/30'
                         }`}
                       />
-                      {errors.websiteUrl && <p className="text-xs text-red-500">{errors.websiteUrl}</p>}
+                      {errors.websiteUrl && <p className="text-xs sm:text-sm text-red-500 mt-1">{errors.websiteUrl}</p>}
                     </motion.div>
                   )}
                 </div>
@@ -762,18 +762,18 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
                 animate="animate"
                 exit="exit"
                 transition={{ duration: 0.25 }}
-                className="space-y-5 pb-4"
+                className="space-y-5 sm:space-y-6 pb-4 sm:pb-5"
               >
-                <div className="space-y-1">
-                  <p className="text-sm font-semibold text-slate-900">Email Verification & Password</p>
-                  <p className="text-xs text-slate-500">Verify your email and set a secure password.</p>
+                <div className="space-y-1 sm:space-y-1.5">
+                  <p className="text-sm sm:text-base font-semibold text-slate-900">Email Verification & Password</p>
+                  <p className="text-xs sm:text-sm text-slate-500">Verify your email and set a secure password.</p>
                 </div>
 
-                <div className="space-y-2">
-                  <label className="text-xs font-medium text-slate-700">
+                <div className="space-y-2 sm:space-y-2.5">
+                  <label className="text-xs sm:text-sm font-medium text-slate-700">
                     Email Address <span className="text-red-500">*</span>
                   </label>
-                  <div className="flex flex-col sm:flex-row gap-3">
+                  <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                     <div className="flex-1">
                       <input
                         name="businessEmail"
@@ -781,7 +781,7 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
                         onChange={handleChange}
                         disabled={otpSent}
                         placeholder="name@company.com"
-                        className={`w-full rounded-lg border px-3 py-2.5 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 transition ${
+                        className={`w-full rounded-lg border px-3 py-2.5 sm:px-4 sm:py-3 text-sm sm:text-base shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 transition ${
                           errors.businessEmail
                             ? 'border-red-500 focus:ring-red-200'
                             : 'border-slate-200 focus:ring-primary/30'
@@ -792,12 +792,12 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
                       type="button"
                       onClick={handleSendOtp}
                       disabled={otpSent || isSubmitting}
-                      className="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-[1px] disabled:cursor-not-allowed disabled:opacity-60 whitespace-nowrap"
+                      className="inline-flex items-center justify-center rounded-lg bg-primary px-3 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm font-semibold text-white shadow-sm transition hover:-translate-y-[1px] disabled:cursor-not-allowed disabled:opacity-60 whitespace-nowrap"
                     >
                       {otpSent ? 'OTP Sent' : isSubmitting ? 'Sending...' : 'Send OTP'}
                     </button>
                   </div>
-                  {errors.businessEmail && <p className="text-xs text-red-500 mt-1">{errors.businessEmail}</p>}
+                  {errors.businessEmail && <p className="text-xs sm:text-sm text-red-500 mt-1">{errors.businessEmail}</p>}
                 </div>
 
                 {otpSent && (
@@ -808,10 +808,10 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
                     transition={{ duration: 0.2 }}
                     className="space-y-2"
                   >
-                    <label className="text-xs font-medium text-slate-700">
+                    <label className="text-xs sm:text-sm font-medium text-slate-700">
                       OTP <span className="text-red-500">*</span>
                     </label>
-                    <div className="flex flex-col sm:flex-row gap-3">
+                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                       <div className="flex-1">
                         <input
                           name="otp"
@@ -820,7 +820,7 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
                           onChange={handleChange}
                           disabled={otpVerified}
                           placeholder="6-digit code"
-                          className={`w-full rounded-lg border px-3 py-2.5 text-sm shadow-sm text-center tracking-[0.35em] focus:outline-none focus:ring-2 focus:ring-offset-0 transition ${
+                          className={`w-full rounded-lg border px-3 py-2.5 sm:px-4 sm:py-3 text-sm sm:text-base shadow-sm text-center tracking-[0.35em] focus:outline-none focus:ring-2 focus:ring-offset-0 transition ${
                             errors.otp
                               ? 'border-red-500 focus:ring-red-200'
                               : otpVerified
@@ -833,12 +833,12 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
                         type="button"
                         onClick={handleVerifyOtp}
                         disabled={otpVerified || !formData.otp}
-                        className="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-[1px] disabled:cursor-not-allowed disabled:opacity-60 whitespace-nowrap"
+                        className="inline-flex items-center justify-center rounded-lg bg-primary px-3 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm font-semibold text-white shadow-sm transition hover:-translate-y-[1px] disabled:cursor-not-allowed disabled:opacity-60 whitespace-nowrap"
                       >
                         {otpVerified ? 'Verified ✓' : 'Verify OTP'}
                       </button>
                     </div>
-                    {errors.otp && <p className="text-xs text-red-500 mt-1">{errors.otp}</p>}
+                    {errors.otp && <p className="text-xs sm:text-sm text-red-500 mt-1">{errors.otp}</p>}
                     {otpVerified && (
                       <p className="text-xs text-green-600 flex items-center gap-1 mt-1">
                         <svg className="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
@@ -862,9 +862,9 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
                     transition={{ duration: 0.25, delay: 0.05 }}
                     className="space-y-4 rounded-xl border border-slate-200 bg-slate-50/60 p-4 mb-4"
                   >
-                    <div className="space-y-4">
-                      <div className="space-y-1 min-w-0">
-                        <label className="text-xs font-medium text-slate-700">
+                    <div className="space-y-4 sm:space-y-5">
+                      <div className="space-y-1.5 sm:space-y-2 min-w-0">
+                        <label className="text-xs sm:text-sm font-medium text-slate-700">
                           Password <span className="text-red-500">*</span>
                         </label>
                         <div className="relative">
@@ -873,7 +873,7 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
                             type={showPassword ? 'text' : 'password'}
                             value={formData.password}
                             onChange={handleChange}
-                            className={`w-full rounded-lg border px-3 py-2.5 text-sm shadow-sm pr-11 focus:outline-none focus:ring-2 focus:ring-offset-0 transition ${
+                            className={`w-full rounded-lg border px-3 py-2.5 sm:px-4 sm:py-3 text-sm sm:text-base shadow-sm pr-10 sm:pr-12 focus:outline-none focus:ring-2 focus:ring-offset-0 transition ${
                               errors.password
                                 ? 'border-red-500 focus:ring-red-200'
                                 : 'border-slate-200 focus:ring-primary/30'
@@ -883,7 +883,7 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
                           <button
                             type="button"
                             onClick={() => setShowPassword((prev) => !prev)}
-                            className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-primary transition-colors"
+                            className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-primary transition-colors"
                             aria-label={showPassword ? 'Hide password' : 'Show password'}
                           >
                             {showPassword ? (
@@ -898,11 +898,11 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
                             )}
                           </button>
                         </div>
-                        {errors.password && <p className="text-xs text-red-500">{errors.password}</p>}
+                        {errors.password && <p className="text-xs sm:text-sm text-red-500 mt-1">{errors.password}</p>}
                       </div>
 
-                      <div className="space-y-1 min-w-0">
-                        <label className="text-xs font-medium text-slate-700">
+                      <div className="space-y-1.5 sm:space-y-2 min-w-0">
+                        <label className="text-xs sm:text-sm font-medium text-slate-700">
                           Confirm Password <span className="text-red-500">*</span>
                         </label>
                         <div className="relative">
@@ -911,7 +911,7 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
                             type={showConfirmPassword ? 'text' : 'password'}
                             value={formData.confirmPassword}
                             onChange={handleChange}
-                            className={`w-full rounded-lg border px-3 py-2.5 text-sm shadow-sm pr-11 focus:outline-none focus:ring-2 focus:ring-offset-0 transition ${
+                            className={`w-full rounded-lg border px-3 py-2.5 sm:px-4 sm:py-3 text-sm sm:text-base shadow-sm pr-10 sm:pr-12 focus:outline-none focus:ring-2 focus:ring-offset-0 transition ${
                               errors.confirmPassword
                                 ? 'border-red-500 focus:ring-red-200'
                                 : 'border-slate-200 focus:ring-primary/30'
@@ -921,7 +921,7 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
                           <button
                             type="button"
                             onClick={() => setShowConfirmPassword((prev) => !prev)}
-                            className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-primary transition-colors"
+                            className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-primary transition-colors"
                             aria-label={showConfirmPassword ? 'Hide password' : 'Show password'}
                           >
                             {showConfirmPassword ? (
@@ -937,7 +937,7 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
                           </button>
                         </div>
                         {errors.confirmPassword && (
-                          <p className="text-xs text-red-500">{errors.confirmPassword}</p>
+                          <p className="text-xs sm:text-sm text-red-500 mt-1">{errors.confirmPassword}</p>
                         )}
                       </div>
                     </div>
@@ -1013,19 +1013,19 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
           </AnimatePresence>
         </div>
 
-        <div className="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-200 bg-white flex-shrink-0">
+        <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-3 pt-4 sm:pt-5 border-t border-slate-200 bg-white flex-shrink-0 px-3 sm:px-4">
           {currentStep === 1 ? (
             <div className="flex items-center gap-2">
               <button
                 type="button"
                 onClick={handleRequestCallback}
                 disabled={!step1Ready || callbackStatus === 'pending'}
-                className="rounded-lg border border-primary/70 px-4 py-2 text-sm font-semibold text-primary transition hover:-translate-y-[1px] hover:shadow disabled:cursor-not-allowed disabled:opacity-60"
+                className="rounded-lg border border-primary/70 px-3 py-2 sm:px-4 sm:py-2.5 text-xs sm:text-sm font-semibold text-primary transition hover:-translate-y-[1px] hover:shadow disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {callbackStatus === 'pending' ? 'Requesting...' : 'Request Callback'}
               </button>
               {callbackStatus === 'sent' && (
-                <span className="text-xs font-semibold text-green-600">Sent to admin</span>
+                <span className="text-xs sm:text-sm font-semibold text-green-600">Sent to admin</span>
               )}
             </div>
           ) : (
@@ -1033,7 +1033,7 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
               type="button"
               onClick={handlePrevious}
               disabled={currentStep === 1}
-              className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:-translate-y-[1px] hover:shadow disabled:cursor-not-allowed disabled:opacity-60"
+              className="rounded-lg border border-slate-300 px-3 py-2 sm:px-4 sm:py-2.5 text-xs sm:text-sm font-semibold text-slate-700 transition hover:-translate-y-[1px] hover:shadow disabled:cursor-not-allowed disabled:opacity-60"
             >
               Previous
             </button>
@@ -1044,7 +1044,7 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
               type="button"
               onClick={handleNext}
               disabled={(currentStep === 1 && !step1Ready) || (currentStep === 2 && !step2Ready)}
-              className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-blue-500/20 transition hover:-translate-y-[1px] disabled:cursor-not-allowed disabled:opacity-60"
+              className="rounded-lg bg-primary px-3 py-2 sm:px-4 sm:py-2.5 text-xs sm:text-sm font-semibold text-white shadow-lg shadow-blue-500/20 transition hover:-translate-y-[1px] disabled:cursor-not-allowed disabled:opacity-60"
             >
               Next
             </button>
@@ -1052,14 +1052,14 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
             <button
               type="submit"
               disabled={!step3Ready || isSubmitting}
-              className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-blue-500/20 transition hover:-translate-y-[1px] disabled:cursor-not-allowed disabled:opacity-60"
+              className="rounded-lg bg-primary px-3 py-2 sm:px-4 sm:py-2.5 text-xs sm:text-sm font-semibold text-white shadow-lg shadow-blue-500/20 transition hover:-translate-y-[1px] disabled:cursor-not-allowed disabled:opacity-60"
             >
               {isSubmitting ? 'Creating Account...' : 'Create Account'}
             </button>
           )}
         </div>
 
-        <div className="text-center pt-4 pb-2 text-sm text-slate-600 bg-white flex-shrink-0">
+        <div className="text-center pt-3 sm:pt-4 pb-2 sm:pb-3 text-xs sm:text-sm text-slate-600 bg-white flex-shrink-0 px-3 sm:px-4">
           Already have an account?{' '}
           <button
             type="button"

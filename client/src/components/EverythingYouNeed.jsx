@@ -144,7 +144,7 @@ const EverythingYouNeed = () => {
   const isInView = true
 
   return (
-    <section ref={sectionRef} className="relative py-16 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
+    <section ref={sectionRef} className="relative py-8 sm:py-12 md:py-16 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5" />
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl" />
@@ -158,15 +158,15 @@ const EverythingYouNeed = () => {
           className="text-center mb-12 overflow-visible"
         >
          
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent leading-normal pb-1 overflow-visible">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-4 sm:mb-5 md:mb-6 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent leading-tight sm:leading-normal pb-1 overflow-visible px-2">
             Everything You Need to Run Recruitment
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-2">
             A comprehensive suite of tools designed to streamline every aspect of your recruitment process
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {features.map((feature, index) => (
             <FeatureCard key={index} feature={feature} index={index} />
           ))}

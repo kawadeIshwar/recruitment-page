@@ -265,13 +265,13 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(255,255,255,0.6),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(96,195,255,0.28),transparent_25%)]" />
       </div>
 
-      <div className="relative z-10 mx-auto flex max-w-7xl flex-col gap-10 px-4 pb-28 pt-16 lg:flex-row lg:items-start lg:pt-24 lg:pb-28">
+      <div className="relative z-10 mx-auto flex max-w-7xl flex-col gap-6 sm:gap-8 md:gap-10 px-4 sm:px-6 pb-16 sm:pb-20 md:pb-28 pt-12 sm:pt-16 lg:flex-row lg:items-start lg:pt-20 lg:pb-28">
         {/* Left: dynamic tagline + highlights */}
         <div className="lg:w-7/12">
           
 
-          <div className="relative rounded-3xl py-4 text-[#0d2b53]">
-            <div className="relative min-h-[180px] sm:min-h-[160px]">
+          <div className="relative rounded-3xl py-3 sm:py-4 text-[#0d2b53]">
+            <div className="relative min-h-[140px] sm:min-h-[160px] md:min-h-[180px]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentTagline}
@@ -279,26 +279,26 @@ const HeroSection = () => {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.5, ease: 'easeInOut' }}
-                  className="space-y-4 absolute top-0 left-0 right-0"
+                  className="space-y-3 sm:space-y-4 absolute top-0 left-0 right-0"
                 >
                   <h1
-                    className="text-balance text-3xl font-bold leading-tight text-[#0a2a4a] sm:text-4xl lg:text-[2.7rem]"
+                    className="text-balance text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-[#0a2a4a] lg:text-[2.7rem]"
                     style={{ fontFamily: "'DM Sans', sans-serif" }}
                   >
                     {currentTagline === 2
                       ? 'Built for Recruiters Who Scale, Not Struggle'
                       : taglines[currentTagline].title}
                   </h1>
-                  <p className="max-w-2xl text-lg leading-relaxed text-slate-700">
+                  <p className="max-w-2xl text-sm sm:text-base md:text-lg leading-relaxed text-slate-700">
                     {taglines[currentTagline].description}
                   </p>
                 </motion.div>
               </AnimatePresence>
             </div>
             
-            <div className="mt-6 flex flex-wrap items-center gap-3">
+            <div className="mt-4 sm:mt-6 flex flex-wrap items-center gap-2 sm:gap-3">
               <button
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-base font-semibold text-[#0d2b53] shadow-lg shadow-blue-500/20 transition hover:-translate-y-[1px]"
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-white px-4 py-2.5 sm:px-5 sm:py-3 text-sm sm:text-base font-semibold text-[#0d2b53] shadow-lg shadow-blue-500/20 transition hover:-translate-y-[1px]"
                 onClick={() => setShowLoginForm(false)}
               >
                 Get started free
@@ -308,7 +308,7 @@ const HeroSection = () => {
             </div>
           </div>
 
-          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+          <div className="mt-6 sm:mt-8 grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-3">
             <div className="rounded-2xl border border-white/60 bg-white/70 px-4 py-4 text-[#0d2b53] shadow-sm">
               <p className="text-sm text-[#1d7bff]">Resume branding</p>
               <p className="text-2xl font-semibold">+62%</p>
@@ -326,13 +326,13 @@ const HeroSection = () => {
 
         {/* Right: onboarding card */}
         <div className="lg:w-5/12">
-          <div className="relative rounded-3xl border border-slate-200 bg-white shadow-2xl max-h-[calc(100vh-8rem)] flex flex-col">
+            <div className="relative rounded-2xl sm:rounded-3xl border border-slate-200 bg-white shadow-2xl max-h-[calc(100vh-4rem)] sm:max-h-[calc(100vh-8rem)] flex flex-col">
             <div className="absolute inset-x-8 top-0 h-24 bg-gradient-to-b from-[#e6f2ff] to-transparent blur-2xl pointer-events-none -z-10" />
-            <div className="relative py-6 sm:p-7 flex-1 flex flex-col min-h-0">
-              <div className="flex items-center justify-between mb-4">
+            <div className="relative py-4 sm:py-6 md:p-7 flex-1 flex flex-col min-h-0 px-4 sm:px-6 md:px-7">
+              <div className="flex items-center justify-between mb-3 sm:mb-4">
                 <div>
                   
-                  <h2 className="text-2xl font-semibold text-[#0d2b53]">
+                  <h2 className="text-xl sm:text-2xl font-semibold text-[#0d2b53]">
                     {showLoginForm ? 'Login to continue' : 'Create your workspace'}
                   </h2>
                 </div>
@@ -341,34 +341,34 @@ const HeroSection = () => {
 
                {showLoginForm ? (
                  forgotPasswordStep === null ? (
-                   <form onSubmit={handleLoginSubmit} className="space-y-4 pb-6">
-                    <div className="space-y-1">
-                      <label className="text-xs font-medium text-slate-700">Email</label>
+                   <form onSubmit={handleLoginSubmit} className="space-y-3 sm:space-y-4 pb-4 sm:pb-6">
+                    <div className="space-y-1.5 sm:space-y-2">
+                      <label className="text-xs sm:text-sm font-medium text-slate-700">Email</label>
                       <input
                         type="email"
                         value={loginEmail}
                         onChange={(e) => setLoginEmail(e.target.value)}
                         placeholder="name@company.com"
-                        className="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-primary/30"
+                        className="w-full rounded-lg border border-slate-200 px-3 py-2.5 sm:px-4 sm:py-3 text-sm sm:text-base shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-primary/30"
                         required
                       />
                     </div>
 
-                    <div className="space-y-1">
-                      <label className="text-xs font-medium text-slate-700">Password</label>
+                    <div className="space-y-1.5 sm:space-y-2">
+                      <label className="text-xs sm:text-sm font-medium text-slate-700">Password</label>
                       <div className="relative">
                         <input
                           type={showLoginPassword ? 'text' : 'password'}
                           value={loginPassword}
                           onChange={(e) => setLoginPassword(e.target.value)}
                           placeholder="••••••••"
-                          className="w-full rounded-lg border border-slate-200 px-3 py-2.5 pr-11 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-primary/30"
+                          className="w-full rounded-lg border border-slate-200 px-3 py-2.5 sm:px-4 sm:py-3 pr-10 sm:pr-12 text-sm sm:text-base shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-primary/30"
                           required
                         />
                         <button
                           type="button"
                           onClick={() => setShowLoginPassword((prev) => !prev)}
-                          className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-primary transition-colors"
+                          className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-primary transition-colors"
                           aria-label={showLoginPassword ? 'Hide password' : 'Show password'}
                         >
                           {showLoginPassword ? (
@@ -385,7 +385,7 @@ const HeroSection = () => {
                       </div>
                       <button
                         type="button"
-                        className="text-xs font-semibold text-primary hover:underline"
+                        className="text-xs sm:text-sm font-semibold text-primary hover:underline"
                         onClick={() => {
                           setForgotEmail(loginEmail)
                           setForgotPasswordStep('email')
@@ -395,75 +395,75 @@ const HeroSection = () => {
                       </button>
                     </div>
 
-                    <div className="flex flex-col gap-3">
+                    <div className="flex flex-col gap-2 sm:gap-3">
                       <button
                         type="submit"
-                        className="rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/20 transition hover:-translate-y-[1px]"
+                        className="rounded-lg bg-primary px-4 py-2.5 sm:px-5 sm:py-3 text-sm sm:text-base font-semibold text-white shadow-lg shadow-blue-500/20 transition hover:-translate-y-[1px]"
                       >
                         Login
                       </button>
                       <button
                         type="button"
                         onClick={handleBackToSignup}
-                        className="text-sm text-slate-600  "
+                        className="text-xs sm:text-sm text-slate-600"
                       >
-                        Don’t have an account? <span className="text-primary font-semibold hover:underline">Sign Up</span>
+                        Don't have an account? <span className="text-primary font-semibold hover:underline">Sign Up</span>
                       </button>
                     </div>
                   </form>
                 ) : forgotPasswordStep === 'email' ? (
-                  <div className="space-y-4 pb-6">
-                    <div className="space-y-1">
-                      <label className="text-xs font-medium text-slate-700">Email</label>
+                  <div className="space-y-3 sm:space-y-4 pb-4 sm:pb-6">
+                    <div className="space-y-1.5 sm:space-y-2">
+                      <label className="text-xs sm:text-sm font-medium text-slate-700">Email</label>
                       <input
                         type="email"
                         value={forgotEmail}
                         onChange={(e) => setForgotEmail(e.target.value)}
                         placeholder="name@company.com"
-                        className="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-primary/30"
+                        className="w-full rounded-lg border border-slate-200 px-3 py-2.5 sm:px-4 sm:py-3 text-sm sm:text-base shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-primary/30"
                       />
                     </div>
 
-                    <div className="flex flex-col gap-3">
+                    <div className="flex flex-col gap-2 sm:gap-3">
                       <button
                         type="button"
                         onClick={handleForgotPassword}
                         disabled={loading}
-                        className="rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/20 transition hover:-translate-y-[1px] disabled:opacity-50"
+                        className="rounded-lg bg-primary px-4 py-2.5 sm:px-5 sm:py-3 text-sm sm:text-base font-semibold text-white shadow-lg shadow-blue-500/20 transition hover:-translate-y-[1px] disabled:opacity-50"
                       >
                         {loading ? 'Sending...' : 'Generate OTP'}
                       </button>
                       <button
                         type="button"
                         onClick={clearForgotPasswordState}
-                        className="text-sm text-slate-600"
+                        className="text-xs sm:text-sm text-slate-600"
                       >
                         Back to login
                       </button>
                     </div>
                   </div>
                 ) : forgotPasswordStep === 'otp' ? (
-                  <div className="space-y-4 pb-6">
-                    <div className="space-y-1">
-                      <label className="text-xs font-medium text-slate-700">OTP</label>
+                  <div className="space-y-3 sm:space-y-4 pb-4 sm:pb-6">
+                    <div className="space-y-1.5 sm:space-y-2">
+                      <label className="text-xs sm:text-sm font-medium text-slate-700">OTP</label>
                       <input
                         type="text"
                         value={otp}
                         onChange={(e) => setOtp(e.target.value.replace(/\D/g, '').slice(0, 6))}
                         placeholder="000000"
                         maxLength={6}
-                        className="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm text-center tracking-[0.35em] shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-primary/30"
+                        className="w-full rounded-lg border border-slate-200 px-3 py-2.5 sm:px-4 sm:py-3 text-sm sm:text-base text-center tracking-[0.35em] shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-primary/30"
                       />
                     </div>
 
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between flex-wrap gap-2">
                       {otpTimer > 0 ? (
-                        <p className="text-xs text-slate-500">Resend OTP in {otpTimer}s</p>
+                        <p className="text-xs sm:text-sm text-slate-500">Resend OTP in {otpTimer}s</p>
                       ) : (
                         <button
                           type="button"
                           onClick={handleResendOTP}
-                          className="text-xs font-semibold text-primary hover:underline"
+                          className="text-xs sm:text-sm font-semibold text-primary hover:underline"
                         >
                           Resend OTP
                         </button>
@@ -474,7 +474,7 @@ const HeroSection = () => {
                           setForgotPasswordStep('email')
                           setOtp('')
                         }}
-                        className="text-xs font-semibold text-slate-600 hover:underline"
+                        className="text-xs sm:text-sm font-semibold text-slate-600 hover:underline"
                       >
                         Back
                       </button>
@@ -484,27 +484,27 @@ const HeroSection = () => {
                       type="button"
                       onClick={handleVerifyOTP}
                       disabled={loading || otp.length !== 6}
-                      className="w-full rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/20 transition hover:-translate-y-[1px] disabled:opacity-50"
+                      className="w-full rounded-lg bg-primary px-4 py-2.5 sm:px-5 sm:py-3 text-sm sm:text-base font-semibold text-white shadow-lg shadow-blue-500/20 transition hover:-translate-y-[1px] disabled:opacity-50"
                     >
                       {loading ? 'Verifying...' : 'Verify OTP'}
                     </button>
                   </div>
                 ) : (
-                  <div className="space-y-4 pb-6">
-                    <div className="space-y-1">
-                      <label className="text-xs font-medium text-slate-700">New password</label>
+                  <div className="space-y-3 sm:space-y-4 pb-4 sm:pb-6">
+                    <div className="space-y-1.5 sm:space-y-2">
+                      <label className="text-xs sm:text-sm font-medium text-slate-700">New password</label>
                       <div className="relative">
                         <input
                           type={showNewPassword ? 'text' : 'password'}
                           value={newPassword}
                           onChange={(e) => setNewPassword(e.target.value)}
                           placeholder="••••••••"
-                          className="w-full rounded-lg border border-slate-200 px-3 py-2.5 pr-10 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-primary/30"
+                          className="w-full rounded-lg border border-slate-200 px-3 py-2.5 sm:px-4 sm:py-3 pr-10 sm:pr-12 text-sm sm:text-base shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-primary/30"
                         />
                         <button
                           type="button"
                           onClick={() => setShowNewPassword(!showNewPassword)}
-                          className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-primary transition-colors"
+                          className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-primary transition-colors"
                           aria-label="Toggle password visibility"
                         >
                           {showNewPassword ? (
@@ -520,20 +520,20 @@ const HeroSection = () => {
                         </button>
                       </div>
                     </div>
-                    <div className="space-y-1">
-                      <label className="text-xs font-medium text-slate-700">Confirm password</label>
+                    <div className="space-y-1.5 sm:space-y-2">
+                      <label className="text-xs sm:text-sm font-medium text-slate-700">Confirm password</label>
                       <div className="relative">
                         <input
                           type={showConfirmNewPassword ? 'text' : 'password'}
                           value={confirmPassword}
                           onChange={(e) => setConfirmPassword(e.target.value)}
                           placeholder="••••••••"
-                          className="w-full rounded-lg border border-slate-200 px-3 py-2.5 pr-10 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-primary/30"
+                          className="w-full rounded-lg border border-slate-200 px-3 py-2.5 sm:px-4 sm:py-3 pr-10 sm:pr-12 text-sm sm:text-base shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-primary/30"
                         />
                         <button
                           type="button"
                           onClick={() => setShowConfirmNewPassword(!showConfirmNewPassword)}
-                          className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-primary transition-colors"
+                          className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-primary transition-colors"
                           aria-label="Toggle password visibility"
                         >
                           {showConfirmNewPassword ? (
@@ -554,14 +554,14 @@ const HeroSection = () => {
                       type="button"
                       onClick={handleResetPassword}
                       disabled={loading || !newPassword || !confirmPassword}
-                      className="w-full rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/20 transition hover:-translate-y-[1px] disabled:opacity-50"
+                      className="w-full rounded-lg bg-primary px-4 py-2.5 sm:px-5 sm:py-3 text-sm sm:text-base font-semibold text-white shadow-lg shadow-blue-500/20 transition hover:-translate-y-[1px] disabled:opacity-50"
                     >
                       {loading ? 'Changing...' : 'Change password'}
                     </button>
                     <button
                       type="button"
                       onClick={clearForgotPasswordState}
-                      className="text-sm text-slate-600"
+                      className="text-xs sm:text-sm text-slate-600"
                     >
                       Back to login
                     </button>
