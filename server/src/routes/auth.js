@@ -16,7 +16,22 @@ const hashPassword = (password, salt) =>
 
 router.post('/signup', async (req, res, next) => {
   try {
-    const { email, password } = req.body
+    const { 
+      email, 
+      password, 
+      firstName, 
+      lastName, 
+      phone, 
+      designation,
+      gstPanType,
+      gstPanNumber,
+      businessType,
+      businessName,
+      businessAddress,
+      registeredAddress,
+      website
+    } = req.body
+    
     if (!email || !password) return res.status(400).json({ error: 'Email and password are required' })
 
     const existing = await User.findOne({ email })
@@ -25,8 +40,29 @@ router.post('/signup', async (req, res, next) => {
     const salt = crypto.randomBytes(16).toString('hex')
     const passwordHash = await hashPassword(password, salt)
 
-    const user = await User.create({ email, passwordHash, salt })
+    const user = await User.create({ 
+      email, 
+      passwordHash, 
+      salt,
+      firstName,
+      lastName,
+      phone,
+      designation,
+      emailVerified: true,
+      business: {
+        verified: true,
+        verificationType: gstPanType,
+        verificationId: gstPanNumber,
+        companyName: businessName,
+        businessType,
+        businessAddress,
+        registeredAddress,
+        website
+      }
+    })
+    
     const token = jwt.sign({ sub: user.id }, process.env.JWT_SECRET || 'devsecret', { expiresIn: process.env.JWT_EXPIRES_IN || '1d' })
+    
     res.status(201).json({ token })
   } catch (err) {
     next(err)
@@ -35,7 +71,7 @@ router.post('/signup', async (req, res, next) => {
 
 router.post('/login', async (req, res, next) => {
   try {
-    const { email, password } = req.body
+    const { email, password, rememberMe } = req.body
     if (!email || !password) return res.status(400).json({ error: 'Email and password are required' })
 
     const user = await User.findOne({ email })
@@ -44,8 +80,21 @@ router.post('/login', async (req, res, next) => {
     const passwordHash = await hashPassword(password, user.salt)
     if (passwordHash !== user.passwordHash) return res.status(401).json({ error: 'Invalid credentials' })
 
-    const token = jwt.sign({ sub: user.id }, process.env.JWT_SECRET || 'devsecret', { expiresIn: process.env.JWT_EXPIRES_IN || '1d' })
-    res.json({ token })
+    // Remember Me: 7 days, otherwise 1 day
+    const expiresIn = rememberMe ? '7d' : (process.env.JWT_EXPIRES_IN || '1d')
+    const token = jwt.sign({ sub: user.id }, process.env.JWT_SECRET || 'devsecret', { expiresIn })
+    
+    // Generate refresh token if remember me is enabled
+    if (rememberMe) {
+      const refreshToken = crypto.randomBytes(32).toString('hex')
+      const refreshExpires = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000) // 30 days
+      user.refreshToken = refreshToken
+      user.refreshTokenExpires = refreshExpires
+      await user.save()
+      res.json({ token, refreshToken, emailVerified: user.emailVerified })
+    } else {
+      res.json({ token, emailVerified: user.emailVerified })
+    }
   } catch (err) {
     next(err)
   }
@@ -104,6 +153,28 @@ router.post('/verify-reset-otp', async (req, res, next) => {
     if (!isValid) return res.status(400).json({ error: 'Invalid or expired OTP' })
 
     res.json({ verified: true, message: 'OTP verified successfully' })
+  } catch (err) {
+    next(err)
+  }
+})
+
+// Refresh token route
+router.post('/refresh-token', async (req, res, next) => {
+  try {
+    const { refreshToken } = req.body
+    if (!refreshToken) return res.status(400).json({ error: 'Refresh token is required' })
+
+    const user = await User.findOne({
+      refreshToken,
+      refreshTokenExpires: { $gt: new Date() }
+    })
+
+    if (!user) return res.status(401).json({ error: 'Invalid or expired refresh token' })
+
+    // Generate new access token
+    const token = jwt.sign({ sub: user.id }, process.env.JWT_SECRET || 'devsecret', { expiresIn: '1d' })
+    
+    res.json({ token })
   } catch (err) {
     next(err)
   }

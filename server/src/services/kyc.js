@@ -3,10 +3,11 @@ import fetch from 'node-fetch'
 const DEBUG = process.env.KYC_DEBUG === 'true'
 
 export const verifyBusiness = async (type, id) => {
-  // Debug: Check if env vars are loaded
-  console.log('[KYC] Environment Check:')
-  console.log('→ KYC_BASE_URL:', process.env.KYC_BASE_URL ? '✓ Set' : '✗ Missing')
-  console.log('→ KYC_API_KEY:', process.env.KYC_API_KEY ? `✓ Set (length: ${process.env.KYC_API_KEY.length})` : '✗ Missing')
+  if (DEBUG) {
+    console.log('[KYC] Environment Check:')
+    console.log('→ KYC_BASE_URL:', process.env.KYC_BASE_URL ? '✓ Set' : '✗ Missing')
+    console.log('→ KYC_API_KEY:', process.env.KYC_API_KEY ? `✓ Set (length: ${process.env.KYC_API_KEY.length})` : '✗ Missing')
+  }
   
   if (!process.env.KYC_BASE_URL || !process.env.KYC_API_KEY) {
     throw new Error('KYC service is not configured')
@@ -41,14 +42,15 @@ export const verifyBusiness = async (type, id) => {
           id_number: id
         }
 
-  // Always log request details for debugging
-  console.log('[KYC DEBUG] Request')
-  console.log('→ Endpoint:', endpoint)
-  console.log('→ Type:', type)
-  console.log('→ Headers:', JSON.stringify(headers))
-  console.log('→ Body:', JSON.stringify(body))
-  console.log('→ API Key (first 8 chars):', process.env.KYC_API_KEY.substring(0, 8) + '...')
-  console.log('→ ID Number:', id)
+  if (DEBUG) {
+    console.log('[KYC DEBUG] Request')
+    console.log('→ Endpoint:', endpoint)
+    console.log('→ Type:', type)
+    console.log('→ Headers:', JSON.stringify(headers))
+    console.log('→ Body:', JSON.stringify(body))
+    console.log('→ API Key (first 8 chars):', process.env.KYC_API_KEY.substring(0, 8) + '...')
+    console.log('→ ID Number:', id)
+  }
 
   let resp
   let rawText
@@ -73,11 +75,12 @@ export const verifyBusiness = async (type, id) => {
     throw new Error('KYC service unreachable')
   }
 
-  // Always log response for debugging
-  console.log('[KYC DEBUG] Response')
-  console.log('→ Status:', resp.status)
-  console.log('→ Status Text:', resp.statusText)
-  console.log('→ Raw Body:', rawText)
+  if (DEBUG) {
+    console.log('[KYC DEBUG] Response')
+    console.log('→ Status:', resp.status)
+    console.log('→ Status Text:', resp.statusText)
+    console.log('→ Raw Body:', rawText)
+  }
 
   if (resp.status === 401 || resp.status === 403) {
     throw new Error('KYC authentication failed – invalid API key or access denied')
@@ -110,6 +113,16 @@ export const verifyBusiness = async (type, id) => {
     parsed.body ||
     parsed
 
+  if (DEBUG) {
+    console.log('[KYC DEBUG] Full API Response Data:')
+    console.log(JSON.stringify(data, null, 2))
+  }
+
+  const formattedAddress = formatAddress(data)
+  if (DEBUG) {
+    console.log('[KYC DEBUG] Formatted Address:', formattedAddress)
+  }
+
   return {
     verified: true,
     verificationSource: 'quickekyc',
@@ -135,7 +148,7 @@ export const verifyBusiness = async (type, id) => {
       data.entityType ||
       ''
     ),
-    address: formatAddress(data),
+    address: formattedAddress,
     gstStatus: data.gst_status || data.status || data.gstin_status || '',
     registrationDate:
       data.registration_date ||
@@ -173,30 +186,59 @@ function normalizeBusinessType(rawType) {
 }
 
 function formatAddress(data) {
-  if (typeof data.address === 'string') return data.address
+  if (DEBUG) {
+    console.log('[KYC DEBUG] formatAddress called with data keys:', Object.keys(data))
+  }
+  
+  if (typeof data.address === 'string') {
+    if (DEBUG) console.log('[KYC DEBUG] Address is string:', data.address)
+    return data.address
+  }
 
-  if (data.address) {
-    return [
+  if (data.address && typeof data.address === 'object') {
+    if (DEBUG) console.log('[KYC DEBUG] Address object:', JSON.stringify(data.address, null, 2))
+    const formatted = [
       data.address.building,
+      data.address.bno,
+      data.address.bnm,
+      data.address.building_name,
+      data.address.building_no,
       data.address.street,
+      data.address.st,
+      data.address.strd,
       data.address.locality,
+      data.address.loc,
       data.address.city,
+      data.address.dst,
       data.address.district,
       data.address.state,
+      data.address.stcd,
       data.address.pincode,
+      data.address.pncd,
       data.address.country
     ]
       .filter(Boolean)
       .join(', ')
+    
+    if (formatted) {
+      if (DEBUG) console.log('[KYC DEBUG] Formatted from address object:', formatted)
+      return formatted
+    }
   }
 
-  return (
+  // Try other address field variations
+  const fallbackAddress = 
     data.principalPlaceOfBusiness ||
     data.principal_place_of_business ||
+    data.pradr ||
+    data.pradr?.addr ||
     data.registeredAddress ||
     data.registered_address ||
     data.address_line1 ||
     data.addressLine1 ||
-    'Address not available'
-  )
+    ''
+  
+  if (DEBUG) console.log('[KYC DEBUG] Fallback address:', fallbackAddress)
+  
+  return fallbackAddress || 'Address not available'
 }

@@ -1,6 +1,7 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, useCallback } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Toast from './Toast'
+import { sanitizeInput, debounce } from '../utils/sanitize'
 
 const businessTypes = ['Private Ltd', 'Partnership', 'Proprietorship', 'LLP', 'Other']
 
@@ -31,6 +32,8 @@ const getFieldError = (name, value, helpers) => {
       return value ? '' : 'Business type is required'
     case 'businessName':
       return value.trim() ? '' : 'Business name is required'
+    case 'businessAddress':
+      return value.trim() ? '' : 'Business address is required'
     case 'websiteUrl':
       if (hasWebsite === 'yes' && !value.trim()) return 'Website URL is required'
       return ''
@@ -69,6 +72,7 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
     gstPanNumber: '',
     businessType: '',
     businessName: '',
+    businessAddress: '',
     registeredAddress: '',
     hasWebsite: 'no',
     websiteUrl: '',
@@ -145,7 +149,7 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
   }
 
   const validateStep2 = () => {
-    const targets = ['gstPanType', 'gstPanNumber', 'businessType', 'businessName']
+    const targets = ['gstPanType', 'gstPanNumber', 'businessType', 'businessName', 'businessAddress']
     if (formData.hasWebsite === 'yes') targets.push('websiteUrl')
     const results = targets.map((field) => validateField(field, formData[field]))
 
@@ -187,7 +191,9 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
     }
   }
 
-  const handleVerifyBusiness = async () => {
+  // Debounced version to prevent spam clicks
+  const handleVerifyBusinessDebounced = useCallback(
+    debounce(async () => {
     const typeValid = validateField('gstPanType', formData.gstPanType)
     const numberValid = validateField('gstPanNumber', formData.gstPanNumber)
     if (!typeValid || !numberValid) return
@@ -225,13 +231,11 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
         ...prev,
         businessName: data.companyName || '',
         businessType: data.businessType || '',
+        businessAddress: data.address || '',
         registeredAddress: data.address || ''
       }))
-      setErrors((prev) => ({ ...prev, gstPanNumber: '', businessName: '', businessType: '' }))
-      
-      console.log('Business verified:', data)
+      setErrors((prev) => ({ ...prev, gstPanNumber: '', businessName: '', businessType: '', businessAddress: '' }))
     } catch (error) {
-      console.error('Verification error:', error)
       setVerificationStatus('error')
       setAutoFillLocked(false)
       setErrors((prev) => ({
@@ -239,39 +243,60 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
         gstPanNumber: 'Failed to verify. Please check your connection and try again.'
       }))
     }
+    }, 1000),
+    [formData.gstPanType, formData.gstPanNumber, verificationStatus]
+  )
+
+  const handleVerifyBusiness = () => {
+    const typeValid = validateField('gstPanType', formData.gstPanType)
+    const numberValid = validateField('gstPanNumber', formData.gstPanNumber)
+    if (!typeValid || !numberValid) return
+    
+    if (verificationStatus === 'pending') return // Prevent double clicks
+    handleVerifyBusinessDebounced()
   }
 
-  const handleSendOtp = async () => {
-    const emailValid = validateField('businessEmail', formData.businessEmail)
-    if (!emailValid) return
+  // Debounced OTP send to prevent spam
+  const handleSendOtpDebounced = useCallback(
+    debounce(async () => {
+      const emailValid = validateField('businessEmail', formData.businessEmail)
+      if (!emailValid) return
 
-    setIsSubmitting(true)
-    try {
-      const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:4000'
-      const response = await fetch(`${API_BASE_URL}/verification/otp/send`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: formData.businessEmail })
-      })
+      setIsSubmitting(true)
+      try {
+        const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:4000'
+        const response = await fetch(`${API_BASE_URL}/verification/otp/send`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: formData.businessEmail })
+        })
 
-      const data = await response.json()
+        const data = await response.json()
 
-      if (!response.ok) {
-        setErrors(prev => ({ ...prev, businessEmail: data.error || 'Failed to send OTP. Please try again.' }))
+        if (!response.ok) {
+          setErrors(prev => ({ ...prev, businessEmail: data.error || 'Failed to send OTP. Please try again.' }))
+          setIsSubmitting(false)
+          return
+        }
+
+        setOtpSent(true)
         setIsSubmitting(false)
-        return
+      } catch (error) {
+        setErrors(prev => ({ ...prev, businessEmail: 'Network error. Please check your connection and try again.' }))
+        setIsSubmitting(false)
       }
+    }, 2000),
+    [formData.businessEmail, isSubmitting]
+  )
 
-      setOtpSent(true)
-      setIsSubmitting(false)
-    } catch (error) {
-      console.error('Failed to send OTP:', error)
-      setErrors(prev => ({ ...prev, businessEmail: 'Network error. Please check your connection and try again.' }))
-      setIsSubmitting(false)
-    }
+  const handleSendOtp = () => {
+    if (isSubmitting || otpSent) return
+    handleSendOtpDebounced()
   }
 
-  const handleVerifyOtp = async () => {
+  // Debounced OTP verification
+  const handleVerifyOtpDebounced = useCallback(
+    debounce(async () => {
     // Basic validation without circular dependency
     if (!formData.otp.trim()) {
       setErrors(prev => ({ ...prev, otp: 'Please enter OTP' }))
@@ -306,10 +331,22 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
       setErrors((prev) => ({ ...prev, otp: '' }))
       setIsSubmitting(false)
     } catch (error) {
-      console.error('Failed to verify OTP:', error)
       setErrors(prev => ({ ...prev, otp: 'Network error. Please try again.' }))
       setIsSubmitting(false)
     }
+    }, 1000),
+    [formData.businessEmail, formData.otp, isSubmitting, otpVerified]
+  )
+
+  const handleVerifyOtp = () => {
+    if (isSubmitting || otpVerified) return
+    
+    if (!formData.otp.trim()) {
+      setErrors(prev => ({ ...prev, otp: 'Please enter OTP' }))
+      return
+    }
+    
+    handleVerifyOtpDebounced()
   }
 
   const showToast = (message, type = 'success') => {
@@ -338,6 +375,7 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
           gstPanNumber: formData.gstPanNumber,
           businessType: formData.businessType,
           businessName: formData.businessName,
+          businessAddress: formData.businessAddress,
           registeredAddress: formData.registeredAddress,
           website: formData.hasWebsite === 'yes' ? formData.websiteUrl : null
         })
@@ -357,11 +395,9 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
       // Reset form after 2 seconds
       setTimeout(() => {
         // You can redirect to login or dashboard here
-        console.log('Account created:', data)
       }, 2000)
       
     } catch (error) {
-      console.error('Signup error:', error)
       setIsSubmitting(false)
       showToast('Network error. Please check your connection and try again.', 'error')
     }
@@ -378,12 +414,6 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
     setCallbackStatus('pending')
     setTimeout(() => {
       setCallbackStatus('sent')
-      console.log('Callback request sent for:', {
-        firstName: formData.firstName,
-        lastName: formData.lastName,
-        phoneNumber: formData.phoneNumber,
-        designation: formData.designation
-      })
     }, 900)
   }
 
@@ -401,7 +431,7 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
 
   const step2Ready =
     verificationStatus === 'success' &&
-    ['gstPanType', 'gstPanNumber', 'businessType', 'businessName'].every(
+    ['gstPanType', 'gstPanNumber', 'businessType', 'businessName', 'businessAddress'].every(
       (field) =>
         !getFieldError(field, formData[field], {
           gstPanType: formData.gstPanType,
@@ -654,19 +684,18 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div className="space-y-1.5 sm:space-y-2 min-w-0">
-                    <label className="text-xs sm:text-sm font-medium text-slate-700">
+                    <label className="text-xs font-medium text-slate-700">
                       Type of Business <span className="text-red-500">*</span>
                     </label>
                     <select
                       name="businessType"
                       value={formData.businessType}
                       onChange={handleChange}
-                      disabled={autoFillLocked}
-                      className={`w-full rounded-lg border px-3 py-2.5 sm:px-4 sm:py-3 text-sm sm:text-base shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 transition ${
+                      className={`w-full rounded-lg border px-3 py-2 sm:px-3.5 sm:py-2.5 text-xs sm:text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 transition ${
                         errors.businessType
                           ? 'border-red-500 focus:ring-red-200'
                           : 'border-slate-200 focus:ring-primary/30'
-                      } ${autoFillLocked ? 'bg-slate-50 cursor-not-allowed' : ''}`}
+                      }`}
                     >
                       <option value="">Select</option>
                       {businessTypes.map((type) => (
@@ -675,53 +704,59 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
                         </option>
                       ))}
                     </select>
-                    {errors.businessType && <p className="text-xs sm:text-sm text-red-500 mt-1">{errors.businessType}</p>}
+                    {errors.businessType && <p className="text-xs text-red-500 mt-1">{errors.businessType}</p>}
                   </div>
 
                   <div className="space-y-1.5 sm:space-y-2 min-w-0">
-                    <label className="text-xs sm:text-sm font-medium text-slate-700">
+                    <label className="text-xs font-medium text-slate-700">
                       Business / Company Name <span className="text-red-500">*</span>
                     </label>
                     <input
                       name="businessName"
                       value={formData.businessName}
                       onChange={handleChange}
-                      readOnly={autoFillLocked}
                       placeholder="Northbridge Talent Pvt Ltd"
-                      className={`w-full rounded-lg border px-3 py-2.5 sm:px-4 sm:py-3 text-sm sm:text-base shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 transition ${
+                      className={`w-full rounded-lg border px-3 py-2 sm:px-3.5 sm:py-2.5 text-xs sm:text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 transition ${
                         errors.businessName
                           ? 'border-red-500 focus:ring-red-200'
                           : 'border-slate-200 focus:ring-primary/30'
-                      } ${autoFillLocked ? 'bg-slate-50 cursor-not-allowed' : ''}`}
+                      }`}
                     />
-                    {errors.businessName && <p className="text-xs sm:text-sm text-red-500 mt-1">{errors.businessName}</p>}
+                    {errors.businessName && <p className="text-xs text-red-500 mt-1">{errors.businessName}</p>}
                   </div>
                 </div>
 
-                {formData.registeredAddress && (
-                  <div className="space-y-1.5 sm:space-y-2 min-w-0">
-                    <label className="text-xs sm:text-sm font-medium text-slate-700">Registered Address (read-only)</label>
-                    <textarea
-                      value={formData.registeredAddress}
-                      readOnly
-                      rows={2}
-                      className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2.5 sm:px-4 sm:py-3 text-sm sm:text-base text-slate-700 shadow-sm resize-none"
-                    />
-                  </div>
-                )}
+                <div className="space-y-1.5 sm:space-y-2 min-w-0">
+                  <label className="text-xs font-medium text-slate-700">
+                    Business Address <span className="text-red-500">*</span>
+                  </label>
+                  <textarea
+                    name="businessAddress"
+                    value={formData.businessAddress}
+                    onChange={handleChange}
+                    placeholder="Enter your business address"
+                    rows={2}
+                    className={`w-full rounded-lg border px-3 py-2 sm:px-3.5 sm:py-2.5 text-xs sm:text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 transition resize-none ${
+                      errors.businessAddress
+                        ? 'border-red-500 focus:ring-red-200'
+                        : 'border-slate-200 focus:ring-primary/30'
+                    }`}
+                  />
+                  {errors.businessAddress && <p className="text-xs text-red-500 mt-1">{errors.businessAddress}</p>}
+                </div>
 
                 <div className="space-y-2 sm:space-y-2.5">
-                  <p className="text-xs sm:text-sm font-medium text-slate-700">Do you have a business website?</p>
+                  <p className="text-xs font-medium text-slate-700">Do you have a business website?</p>
                   <div className="flex gap-3 sm:gap-4">
                     {['yes', 'no'].map((choice) => (
-                      <label key={choice} className="flex items-center gap-2 text-xs sm:text-sm text-slate-700 cursor-pointer">
+                      <label key={choice} className="flex items-center gap-2 text-xs text-slate-700 cursor-pointer">
                         <input
                           type="radio"
                           name="hasWebsite"
                           value={choice}
                           checked={formData.hasWebsite === choice}
                           onChange={handleChange}
-                          className="h-4 w-4 sm:h-5 sm:w-5 text-primary focus:ring-primary flex-shrink-0"
+                          className="h-4 w-4 text-primary focus:ring-primary flex-shrink-0"
                         />
                         <span className="whitespace-nowrap">{choice === 'yes' ? 'Yes' : 'No'}</span>
                       </label>
@@ -735,19 +770,19 @@ const ProgressiveCreateAccount = ({ onSwitchToLogin }) => {
                       transition={{ duration: 0.2 }}
                       className="space-y-1.5 sm:space-y-2 pt-2 sm:pt-3 min-w-0"
                     >
-                      <label className="text-xs sm:text-sm font-medium text-slate-700">Website URL</label>
+                      <label className="text-xs font-medium text-slate-700">Website URL</label>
                       <input
                         name="websiteUrl"
                         value={formData.websiteUrl}
                         onChange={handleChange}
                         placeholder="https://company.com"
-                        className={`w-full rounded-lg border px-3 py-2.5 sm:px-4 sm:py-3 text-sm sm:text-base shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 transition ${
+                        className={`w-full rounded-lg border px-3 py-2 sm:px-3.5 sm:py-2.5 text-xs sm:text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0 transition ${
                           errors.websiteUrl
                             ? 'border-red-500 focus:ring-red-200'
                             : 'border-slate-200 focus:ring-primary/30'
                         }`}
                       />
-                      {errors.websiteUrl && <p className="text-xs sm:text-sm text-red-500 mt-1">{errors.websiteUrl}</p>}
+                      {errors.websiteUrl && <p className="text-xs text-red-500 mt-1">{errors.websiteUrl}</p>}
                     </motion.div>
                   )}
                 </div>
