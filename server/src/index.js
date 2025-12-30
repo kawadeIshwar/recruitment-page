@@ -51,6 +51,13 @@ const PORT = process.env.PORT || 4000
 
 const start = async () => {
   await connectDb()
+  app.get('/health', (req, res) => {
+    res.json({ 
+      status: 'ok', 
+      timestamp: new Date().toISOString(),
+      environment: process.env.NODE_ENV || 'development'
+    })
+  })
   app.listen(PORT, () => {
     console.log(`API running on :${PORT}`)
   })
