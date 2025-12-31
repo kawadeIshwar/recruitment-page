@@ -11,7 +11,7 @@ const HomePage = () => {
       </section>
 
       {/* Everything You Need Section */}
-      <section>
+      <section id="features">
         <EverythingYouNeed />
       </section>
 
