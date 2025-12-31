@@ -117,7 +117,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="public/Privacy Policy-alabty.com.pdf"
                   className="text-sm text-gray-300 hover:text-white transition-colors duration-200 inline-block hover:translate-x-1 transform transition-transform"
                 >
                   Privacy Policy
@@ -125,7 +125,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="public/Terms and Conditions-alabty.com.pdf"
                   className="text-sm text-gray-300 hover:text-white transition-colors duration-200 inline-block hover:translate-x-1 transform transition-transform"
                 >
                   Terms of Service
