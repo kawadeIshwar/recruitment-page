@@ -56,15 +56,15 @@ const Footer = () => {
         {/* Company Info */}
         <div className="text-center">
           <div className="mb-4 flex justify-center">
-            <img src={logo} alt="alabty Logo" className="h-12 w-auto" />
+            <img src={logo} alt="alabty Logo" className="h-10 sm:h-12 w-auto" />
           </div>
-          <p className="text-gray-300 mb-6 leading-relaxed mx-auto">
+          <p className="text-gray-300 mb-4 sm:mb-6 leading-relaxed mx-auto text-sm sm:text-base px-2">
             Your Complete Recruitment Engine – Automated, Accurate, Unstoppable
           </p>
           
           {/* Quick Links */}
-          <div className="mb-6">
-            <ul className="flex justify-center space-x-4 text-sm">
+          <div className="mb-4 sm:mb-6">
+            <ul className="flex flex-wrap justify-center gap-2 sm:gap-4 text-xs sm:text-sm px-2">
               <li>
                 <a
                   href="#hero"
@@ -72,12 +72,12 @@ const Footer = () => {
                     e.preventDefault()
                     document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' })
                   }}
-                  className="text-gray-300 hover:text-white transition-colors duration-200 cursor-pointer"
+                  className="text-gray-300 hover:text-white transition-colors duration-200 cursor-pointer whitespace-nowrap"
                 >
                   Home
                 </a>
               </li>
-              <li className="text-gray-300">|</li>
+              <li className="text-gray-300 hidden sm:inline">|</li>
               <li>
                 <a
                   href="#features"
@@ -85,12 +85,12 @@ const Footer = () => {
                     e.preventDefault()
                     document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })
                   }}
-                  className="text-gray-300 hover:text-white transition-colors duration-200 cursor-pointer"
+                  className="text-gray-300 hover:text-white transition-colors duration-200 cursor-pointer whitespace-nowrap"
                 >
                   Features
                 </a>
               </li>
-              <li className="text-gray-300">|</li>
+              <li className="text-gray-300 hidden sm:inline">|</li>
               <li>
                 <a
                   href="#faq"
@@ -98,25 +98,25 @@ const Footer = () => {
                     e.preventDefault()
                     document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth' })
                   }}
-                  className="text-gray-300 hover:text-white transition-colors duration-200 cursor-pointer"
+                  className="text-gray-300 hover:text-white transition-colors duration-200 cursor-pointer whitespace-nowrap"
                 >
                   FAQ
                 </a>
               </li>
-              <li className="text-gray-300">|</li>
+              <li className="text-gray-300 hidden sm:inline">|</li>
               <li>
                 <a
                   href="/Privacy-Policy-alabty.html"
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
+                  className="text-gray-300 hover:text-white transition-colors duration-200 whitespace-nowrap"
                 >
                   Privacy Policy
                 </a>
               </li>
-              <li className="text-gray-300">|</li>
+              <li className="text-gray-300 hidden sm:inline">|</li>
               <li>
                 <a
                   href="/Terms-and-Conditions-alabty.html"
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
+                  className="text-gray-300 hover:text-white transition-colors duration-200 whitespace-nowrap"
                 >
                   Terms of Service
                 </a>
@@ -125,7 +125,7 @@ const Footer = () => {
           </div>
 
           {/* Social Icons */}
-          <div className="flex justify-center space-x-4 mb-8">
+          <div className="flex justify-center flex-wrap gap-3 sm:gap-4 mb-6 sm:mb-8 px-2">
             {socialLinks.map((social, index) => (
               <motion.a
                 key={index}
@@ -134,7 +134,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-300 hover:text-white hover:bg-primary transition-colors duration-200"
+                className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-300 hover:text-white hover:bg-primary transition-colors duration-200"
                 aria-label={social.name}
               >
                 {social.icon}
@@ -143,11 +143,11 @@ const Footer = () => {
           </div>
 
           {/* Copyright */}
-          <p className="text-sm text-gray-300 text-center">
+          <p className="text-xs sm:text-sm text-gray-300 text-center px-2">
             © 2025 alabty. All rights reserved.
           </p>
         </div>
-        <div className="mt-6 border-t border-gray-800" />
+        <div className="mt-4 sm:mt-6 border-t border-gray-800" />
       </div>
     </footer>
   )

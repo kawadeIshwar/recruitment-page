@@ -196,7 +196,13 @@ router.post('/reset-password', async (req, res, next) => {
 
     // Verify OTP first
     const isValid = await verifyOtp(email.toLowerCase().trim(), code)
-    if (!isValid) return res.status(400).json({ error: 'Invalid or expired OTP' })
+    if (!isValid) return res.status(400).json({ error: 'Invalid or expired OTP. Please request a new one.' })
+
+    // Check if new password is same as old password
+    const oldPasswordHash = await hashPassword(newPassword, user.salt)
+    if (oldPasswordHash === user.passwordHash) {
+      return res.status(400).json({ error: 'New password cannot be the same as your current password. Please choose a different password.' })
+    }
 
     // Generate new salt and hash password
     const salt = crypto.randomBytes(16).toString('hex')
@@ -207,7 +213,7 @@ router.post('/reset-password', async (req, res, next) => {
     user.salt = salt
     await user.save()
 
-    res.json({ success: true, message: 'Password reset successfully' })
+    res.json({ success: true, message: 'Password reset successfully!' })
   } catch (err) {
     next(err)
   }

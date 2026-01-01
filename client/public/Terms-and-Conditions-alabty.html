@@ -581,6 +581,29 @@
 			background-color: #4f46e5;
 			box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 		}
+		.hamburger {
+			display: none;
+			flex-direction: column;
+			cursor: pointer;
+			padding: 0.5rem;
+		}
+		.hamburger span {
+			width: 24px;
+			height: 2px;
+			background-color: #374151;
+			margin: 3px 0;
+			transition: 0.3s;
+		}
+		.mobile-menu {
+			display: none;
+			flex-direction: column;
+			gap: 0.75rem;
+			padding: 1rem 0;
+			border-top: 1px solid #f3f4f6;
+		}
+		.mobile-menu.active {
+			display: flex;
+		}
 		/* Footer Styles */
 		.footer {
 			background-color: #24324a;
@@ -671,8 +694,51 @@
 		}
 		@media (max-width: 768px) {
 			.tagline { display: none; }
-			.header-buttons { gap: 0.5rem; }
-			.btn-login, .btn-signup { padding: 0.5rem 1rem; font-size: 13px; }
+			.header-buttons { display: none; }
+			.hamburger { display: flex; }
+			
+			.pdf24_02 {
+				width: 95%;
+				padding: 0 0.5rem;
+			}
+			.pdf24_view {
+				font-size: 6em;
+			}
+			.pdf24_01 {
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				max-width: 100%;
+			}
+			
+			.footer-links {
+				flex-wrap: wrap;
+				gap: 0.5rem;
+				font-size: 12px;
+			}
+			.footer-separator {
+				display: none;
+			}
+			.footer-logo {
+				height: 36px;
+			}
+			.social-links {
+				gap: 0.75rem;
+			}
+			.social-icon {
+				width: 36px;
+				height: 36px;
+			}
+			.social-icon svg {
+				width: 18px;
+				height: 18px;
+			}
+			.footer-tagline {
+				font-size: 13px;
+			}
+			.footer-copyright {
+				font-size: 12px;
+			}
 		}
 		@media (max-width: 1024px) {
 			.pdf24_02 {
@@ -717,8 +783,8 @@
 		}
 		@media (max-width: 480px) {
 			.header-content {
-				flex-direction: column;
-				gap: 1rem;
+				flex-direction: row;
+				justify-content: space-between;
 			}
 			.logo {
 				height: 32px;
@@ -754,9 +820,24 @@
 						<a href="/" class="btn-login">Login</a>
 						<a href="/" class="btn-signup">Get Started</a>
 					</div>
+					<div class="hamburger" onclick="toggleMenu()">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+				<div class="mobile-menu" id="mobileMenu">
+					<a href="/" class="btn-login" style="text-align: center;">Login</a>
+					<a href="/" class="btn-signup" style="text-align: center;">Get Started</a>
 				</div>
 			</div>
 		</header>
+		<script>
+			function toggleMenu() {
+				var menu = document.getElementById('mobileMenu');
+				menu.classList.toggle('active');
+			}
+		</script>
 		<div class="pdf24_ pdf24_02">
 			<div class="pdf24_view">
 				<div class="pdf24_03 pdf24_04">
