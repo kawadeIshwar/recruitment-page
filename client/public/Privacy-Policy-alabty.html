@@ -2,8 +2,11 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>
-		</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+		<title>Privacy Policy - Alabty</title>
 		
 	<STYLE> 
  .pdf24_ sup {
@@ -31,10 +34,12 @@
 	font-size: 1em;
 	line-height: 0.0em;
 	width: 49.58333em;
-	height: 70.08334em;
+	height: auto;
+	min-height: 250em;
 	border-style: none;
 	display: block;
-	margin: 0em;
+	margin: 0 auto;
+	box-shadow: none;
 }
 
 @supports(-ms-ime-align:auto) { .pdf24_02 {overflow: hidden;}}
@@ -465,14 +470,182 @@
 	letter-spacing: -0.1865px;
 }
 
- body > div {
-	box-shadow: 0 0 5px rgba(0,0,0,0.3) !important;
-	margin: 20px auto !important;
-}
-
-</STYLE> 
-</head>
+		/* Header Styles */
+		.header {
+			position: sticky;
+			top: 0;
+			z-index: 50;
+			background-color: white;
+			box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+			border-bottom: 1px solid #f3f4f6;
+		}
+		.header-container {
+			max-width: 1280px;
+			margin: 0 auto;
+			padding: 0 1rem;
+		}
+		.header-content {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			height: 80px;
+		}
+		.logo {
+			height: 40px;
+			width: auto;
+		}
+		.tagline {
+			flex: 1;
+			text-align: center;
+			margin: 0 2rem;
+			font-size: 14px;
+			color: #4b5563;
+			font-family: 'Inter', sans-serif;
+		}
+		.header-buttons {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+		}
+		.btn-login {
+			padding: 0.5rem 1.5rem;
+			font-size: 14px;
+			font-weight: 500;
+			color: #374151;
+			text-decoration: none;
+			transition: color 0.2s;
+			font-family: 'Inter', sans-serif;
+		}
+		.btn-login:hover {
+			color: #6366f1;
+		}
+		.btn-signup {
+			padding: 0.625rem 1.5rem;
+			font-size: 14px;
+			font-weight: 600;
+			color: white;
+			background-color: #6366f1;
+			border-radius: 0.5rem;
+			text-decoration: none;
+			transition: all 0.2s;
+			font-family: 'Inter', sans-serif;
+		}
+		.btn-signup:hover {
+			background-color: #4f46e5;
+			box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+		}
+		/* Footer Styles */
+		.footer {
+			background-color: #24324a;
+			color: white;
+			margin-top: 3rem;
+		}
+		.footer-container {
+			max-width: 1280px;
+			margin: 0 auto;
+			padding: 1.5rem 1rem 0;
+		}
+		.footer-content {
+			text-align: center;
+		}
+		.footer-logo {
+			height: 48px;
+			width: auto;
+			margin: 0 auto 1rem;
+			display: block;
+		}
+		.footer-tagline {
+			color: #d1d5db;
+			margin-bottom: 1.5rem;
+			line-height: 1.6;
+			font-family: 'Inter', sans-serif;
+		}
+		.footer-links {
+			display: flex;
+			justify-content: center;
+			gap: 1rem;
+			margin-bottom: 1.5rem;
+			font-size: 14px;
+			flex-wrap: wrap;
+			font-family: 'Inter', sans-serif;
+		}
+		.footer-links a {
+			color: #d1d5db;
+			text-decoration: none;
+			transition: color 0.2s;
+		}
+		.footer-links a:hover {
+			color: white;
+		}
+		.footer-separator {
+			color: #d1d5db;
+		}
+		.social-links {
+			display: flex;
+			justify-content: center;
+			gap: 1rem;
+			margin-bottom: 2rem;
+		}
+		.social-icon {
+			width: 40px;
+			height: 40px;
+			background-color: #1f2937;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: #d1d5db;
+			text-decoration: none;
+			transition: all 0.2s;
+		}
+		.social-icon:hover {
+			color: white;
+			background-color: #6366f1;
+			transform: translateY(-2px);
+		}
+		.social-icon svg {
+			width: 20px;
+			height: 20px;
+		}
+		.footer-copyright {
+			font-size: 14px;
+			color: #d1d5db;
+			text-align: center;
+			font-family: 'Inter', sans-serif;
+		}
+		.footer-divider {
+			margin-top: 1.5rem;
+			border-top: 1px solid #374151;
+		}
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		@media (max-width: 768px) {
+			.tagline { display: none; }
+			.header-buttons { gap: 0.5rem; }
+			.btn-login, .btn-signup { padding: 0.5rem 1rem; font-size: 13px; }
+		}
+	</STYLE>
+	</head>
 	<body>
+		<!-- Header -->
+		<header class="header">
+			<div class="header-container">
+				<div class="header-content">
+					<a href="/">
+						<img src="/src/assets/logo.png" alt="alabty Logo" class="logo" />
+					</a>
+					<div class="tagline">
+						Your Complete Recruitment Engine – Automated, Accurate, Unstoppable
+					</div>
+					<div class="header-buttons">
+						<a href="/" class="btn-login">Login</a>
+						<a href="/" class="btn-signup">Get Started</a>
+					</div>
+				</div>
+			</div>
+		</header>
 		<div class="pdf24_ pdf24_02">
 			<div class="pdf24_view">
 				<div class="pdf24_03 pdf24_04">
@@ -522,181 +695,201 @@
 					<div class="pdf24_01" style="left:10.5017em;top:61.7304em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
 					<div class="pdf24_01" style="left:12.0017em;top:59.7118em;"><span class="pdf24_10 pdf24_06 pdf24_42" style="word-spacing:-0.0022em;">IP address, device identifiers, browser and operating system details; &nbsp;</span></div>
 					<div class="pdf24_01" style="left:12.0017em;top:61.6015em;"><span class="pdf24_10 pdf24_06 pdf24_31" style="word-spacing:-0.0027em;">Platform access logs, timestamps, audit trails, and security logs; &nbsp;</span></div>
+					<div class="pdf24_01" style="left:10.5017em;top:63.7307em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:63.6018em;"><span class="pdf24_10 pdf24_06 pdf24_17" style="word-spacing:-0.0031em;">Cookies and similar technologies used for session management and analytics. &nbsp;</span></div>
+					<div class="pdf24_01" style="left:6.002em;top:67.3818em;"><span class="pdf24_05 pdf24_06 pdf24_42" style="word-spacing:-0.0014em;">3. Lawful Basis and Consent under DPD</span><span class="pdf24_05 pdf24_06 pdf24_43">P</span><span class="pdf24_05 pdf24_06 pdf24_14">A</span><span class="pdf24_05 pdf24_06 pdf24_44" style="word-spacing:0.0067em;">ct, 2023 &nbsp;</span></div>
+					<div class="pdf24_01" style="left:7.502em;top:69.2472em;"><span class="pdf24_27 pdf24_28 pdf24_16" style="word-spacing:1.0969em;">• </span><span class="pdf24_10 pdf24_06 pdf24_40" style="word-spacing:-0.0018em;">Personal data is processed strictly on the basis of: &nbsp;</span></div>
+					<div class="pdf24_01" style="left:10.5017em;top:71.2806em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
+					<div class="pdf24_01" style="left:10.5017em;top:73.1706em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
+					<div class="pdf24_01" style="left:10.5017em;top:75.0606em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
+					<div class="pdf24_01" style="left:10.5017em;top:76.9406em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:71.1518em;"><span class="pdf24_05 pdf24_06 pdf24_41" style="word-spacing:0.0022em;">Explicit consent </span><span class="pdf24_10 pdf24_06 pdf24_29" style="word-spacing:-0.0014em;">provided by the Data Principal; &nbsp;</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:73.0418em;"><span class="pdf24_05 pdf24_06 pdf24_41" style="word-spacing:-0.0044em;">Contractual necessity </span><span class="pdf24_10 pdf24_06 pdf24_12" style="word-spacing:-0.0006em;">for providing Platform services; &nbsp;</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:74.9318em;"><span class="pdf24_05 pdf24_06 pdf24_29" style="word-spacing:0.0033em;">Legal obligations </span><span class="pdf24_10 pdf24_06 pdf24_45" style="word-spacing:0.0005em;">imposed by applicable Indian law; &nbsp;</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:76.8118em;"><span class="pdf24_05 pdf24_06 pdf24_31" style="word-spacing:0.0408em;">Legitimate uses </span><span class="pdf24_10 pdf24_06 pdf24_38" style="word-spacing:0.0219em;">permitted under the DPDP Act, including security, fraud prevention, &nbsp;</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:78.0343em;z-index:385;"><span class="pdf24_10 pdf24_06 pdf24_46" style="word-spacing:0.0053em;">and service integrity. &nbsp;</span></div>
+					<div class="pdf24_01" style="left:7.502em;top:79.9096em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
+					<div class="pdf24_01" style="left:9.0017em;top:79.9243em;"><span class="pdf24_10 pdf24_06 pdf24_40" style="word-spacing:-0.0217em;">Recruiters explicitly confirm that </span><span class="pdf24_05 pdf24_06 pdf24_37" style="word-spacing:-0.0271em;">valid candidate consent </span><span class="pdf24_10 pdf24_06 pdf24_07" style="word-spacing:-0.0266em;">has been obtained before uploading &nbsp;</span></div>
+					<div class="pdf24_01" style="left:9.0017em;top:81.1443em;"><span class="pdf24_10 pdf24_06 pdf24_47" style="word-spacing:0.0032em;">or processing any candidate data on alabty.com or its subdomains. &nbsp;</span></div>
+					<div class="pdf24_01" style="left:6.002em;top:84.9243em;"><span class="pdf24_05 pdf24_06 pdf24_23" style="word-spacing:0.005em;">4. Purpose Limitation and Use of Personal Data &nbsp;</span></div>
+					<div class="pdf24_01" style="left:7.502em;top:86.7996em;"><span class="pdf24_27 pdf24_28 pdf24_16" style="word-spacing:1.0969em;">• </span><span class="pdf24_10 pdf24_06 pdf24_17" style="word-spacing:-0.0031em;">Personal data is processed only for clearly defined and lawful purposes, including: &nbsp;</span></div>
+					<div class="pdf24_01" style="left:10.5017em;top:88.8231em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
+					<div class="pdf24_01" style="left:10.5017em;top:90.7131em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
+					<div class="pdf24_01" style="left:10.5017em;top:92.6048em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
+					<div class="pdf24_01" style="left:10.5017em;top:94.4948em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
+					<div class="pdf24_01" style="left:10.5017em;top:96.3748em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:88.6943em;"><span class="pdf24_10 pdf24_06 pdf24_48" style="word-spacing:-0.0306em;">Delivery of </span><span class="pdf24_10 pdf24_06 pdf24_49">A</span><span class="pdf24_10 pdf24_06 pdf24_25">T</span><span class="pdf24_10 pdf24_06 pdf24_50" style="word-spacing:0.0074em;">S, recruitment workflow, and campus placement services; &nbsp;</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:90.5843em;"><span class="pdf24_10 pdf24_06 pdf24_45" style="word-spacing:0.0005em;">Candidate-job matching and opportunity recommendations; &nbsp;</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:92.4759em;"><span class="pdf24_10 pdf24_06 pdf24_11" style="word-spacing:-0.0052em;">AI-assisted screening, assessments, and analytics; &nbsp;</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:94.3659em;"><span class="pdf24_10 pdf24_06 pdf24_45" style="word-spacing:0.0014em;">Recruitment-related communication between recruiters, employers, and candidates; &nbsp;</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:96.2459em;"><span class="pdf24_10 pdf24_06 pdf24_38" style="word-spacing:0.0032em;">Platform security, audit, compliance monitoring, billing, and support. &nbsp;</span></div>
+					<div class="pdf24_01" style="left:7.502em;top:98.1213em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
+					<div class="pdf24_01" style="left:9.0017em;top:98.1359em;"><span class="pdf24_10 pdf24_06 pdf24_40" style="word-spacing:0.0037em;">Personal data is </span><span class="pdf24_05 pdf24_06 pdf24_07" style="word-spacing:-0.0072em;">not sold</span><span class="pdf24_10 pdf24_06 pdf24_29" style="word-spacing:0.0005em;">, leased, or used for unrelated commercial exploitation. &nbsp;</span></div>
+					<div class="pdf24_01" style="left:6.002em;top:101.9159em;"><span class="pdf24_05 pdf24_06 pdf24_42" style="word-spacing:-0.0014em;">5. Candidate Communication and Consent-Based Outreach &nbsp;</span></div>
+					<div class="pdf24_01" style="left:7.502em;top:103.7813em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
+					<div class="pdf24_01" style="left:9.0017em;top:103.7959em;"><span class="pdf24_10 pdf24_06 pdf24_51" style="word-spacing:-0.0031em;">Subject to valid and lawful consent: &nbsp;</span></div>
+					<div class="pdf24_01" style="left:10.5017em;top:105.8173em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:105.6885em;"><span class="pdf24_10 pdf24_06 pdf24_29" style="word-spacing:0.1199em;">alabty may directly communicate relevant job opportunities to candidates where its &nbsp;</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:106.9084em;"><span class="pdf24_10 pdf24_06 pdf24_18" style="word-spacing:0.0038em;">matching systems identify suitability; &nbsp;</span></div>
+					<div class="pdf24_01" style="left:10.5017em;top:108.9273em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
+					<div class="pdf24_01" style="left:10.5017em;top:110.8173em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:108.7985em;"><span class="pdf24_10 pdf24_06 pdf24_40" style="word-spacing:-0.0017em;">Recruiters may contact candidates only for genuine, specific job vacancies; &nbsp;</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:110.6885em;"><span class="pdf24_10 pdf24_06 pdf24_23" style="word-spacing:0.004em;">Candidates retain the right to opt out or withdraw consent at any time. &nbsp;</span></div>
+					<div class="pdf24_01" style="left:7.502em;top:112.5638em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
+					<div class="pdf24_01" style="left:9.0017em;top:112.5784em;"><span class="pdf24_10 pdf24_06 pdf24_32" style="word-spacing:0.005em;">alabty does not guarantee interviews, job offers, or responses. &nbsp;</span></div>
+					<div class="pdf24_01" style="left:6.002em;top:116.3484em;"><span class="pdf24_05 pdf24_06 pdf24_52" style="word-spacing:-0.0134em;">6. AI Processing and Automated Tools &nbsp;</span></div>
+					<div class="pdf24_01" style="left:7.502em;top:118.2238em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
+					<div class="pdf24_01" style="left:9.0017em;top:118.2384em;"><span class="pdf24_10 pdf24_06 pdf24_29" style="word-spacing:0.1853em;">The Platform uses AI and automation tools solely for assistive purposes such as parsing, &nbsp;</span></div>
+					<div class="pdf24_01" style="left:9.0017em;top:119.4601em;"><span class="pdf24_10 pdf24_06 pdf24_45" style="word-spacing:0.0018em;">ranking, screening, and workflow optimization. &nbsp;</span></div>
+					<div class="pdf24_01" style="left:7.502em;top:120.5871em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
+					<div class="pdf24_01" style="left:7.502em;top:122.4771em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
+					<div class="pdf24_01" style="left:9.0017em;top:120.6018em;"><span class="pdf24_10 pdf24_06 pdf24_29" style="word-spacing:0.002em;">AI systems operate under human oversight and </span><span class="pdf24_05 pdf24_06 pdf24_19" style="word-spacing:0.0006em;">do not take final hiring decisions</span><span class="pdf24_10 pdf24_06 pdf24_19" style="word-spacing:0.0006em;">. &nbsp;</span></div>
+					<div class="pdf24_01" style="left:9.0017em;top:122.4918em;"><span class="pdf24_10 pdf24_06 pdf24_17" style="word-spacing:-0.0043em;">Recruiters and employers remain fully responsible for all employment decisions. &nbsp;</span></div>
+					<div class="pdf24_01" style="left:6.002em;top:126.2618em;"><span class="pdf24_05 pdf24_06 pdf24_30" style="word-spacing:0.0029em;">7. Data Sharing and Disclosure Controls &nbsp;</span></div>
+					<div class="pdf24_01" style="left:7.502em;top:128.1371em;"><span class="pdf24_27 pdf24_28 pdf24_16" style="word-spacing:1.0969em;">• </span><span class="pdf24_10 pdf24_06 pdf24_45" style="word-spacing:0.0005em;">Personal data may be shared only: &nbsp;</span></div>
+					<div class="pdf24_01" style="left:10.5017em;top:130.1706em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
+					<div class="pdf24_01" style="left:10.5017em;top:132.0606em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:130.0418em;"><span class="pdf24_10 pdf24_06 pdf24_32" style="word-spacing:0.0024em;">With authorized recruiters or employers for specific recruitment purposes; &nbsp;</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:131.9318em;"><span class="pdf24_10 pdf24_06 pdf24_18" style="word-spacing:0.6785em;">With vetted service providers acting as sub-processors for infrastructure, &nbsp;</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:133.1518em;"><span class="pdf24_10 pdf24_06 pdf24_18" style="word-spacing:0.0053em;">communication, or security; &nbsp;</span></div>
+					<div class="pdf24_01" style="left:10.5017em;top:135.1631em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
+					<div class="pdf24_01" style="left:10.5017em;top:137.0531em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:135.0343em;"><span class="pdf24_10 pdf24_06 pdf24_32" style="word-spacing:-0.0043em;">Through client-owned third-party APIs integrated using the client's own credentials; &nbsp;</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:136.9243em;z-index:490;"><span class="pdf24_10 pdf24_06 pdf24_53" style="word-spacing:0.0097em;">When required by law, court order, or regulatory authority. &nbsp;</span></div>
+					<div class="pdf24_01" style="left:7.502em;top:138.7996em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
+					<div class="pdf24_01" style="left:9.0017em;top:138.8143em;"><span class="pdf24_10 pdf24_06 pdf24_40" style="word-spacing:-0.0016em;">Cross-client data access is technically restricted and prohibited without consent. &nbsp;</span></div>
+					<div class="pdf24_01" style="left:6.002em;top:142.5843em;"><span class="pdf24_05 pdf24_06 pdf24_45" style="word-spacing:-0.0114em;">8. External APIs and Third-Party Integrations &nbsp;</span></div>
+					<div class="pdf24_01" style="left:7.502em;top:144.4596em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
+					<div class="pdf24_01" style="left:7.502em;top:146.3496em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
+					<div class="pdf24_01" style="left:9.0017em;top:144.4743em;"><span class="pdf24_10 pdf24_06 pdf24_11" style="word-spacing:-0.0078em;">Clients may integrate third-party tools using their own APIs, accounts, and licenses. &nbsp;</span></div>
+					<div class="pdf24_01" style="left:9.0017em;top:146.3643em;"><span class="pdf24_10 pdf24_06 pdf24_40" style="word-spacing:0.0299em;">alabty does not control such third-party services and is not responsible for their data handling &nbsp;</span></div>
+					<div class="pdf24_01" style="left:9.0017em;top:147.5843em;"><span class="pdf24_10 pdf24_06 pdf24_26">practices. &nbsp;</span></div>
+					<div class="pdf24_01" style="left:7.502em;top:149.4613em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
+					<div class="pdf24_01" style="left:9.0017em;top:149.4759em;"><span class="pdf24_10 pdf24_06 pdf24_11" style="word-spacing:-0.0039em;">Responsibility for third-party compliance remains with the integrating client. &nbsp;</span></div>
+					<div class="pdf24_01" style="left:6.002em;top:153.2459em;"><span class="pdf24_05 pdf24_06 pdf24_23" style="word-spacing:0.0045em;">9. Data Security Safeguards &nbsp;</span></div>
+					<div class="pdf24_01" style="left:7.502em;top:155.1213em;"><span class="pdf24_27 pdf24_28 pdf24_16" style="word-spacing:1.0969em;">• </span><span class="pdf24_10 pdf24_06 pdf24_45" style="word-spacing:-0.0102em;">alabty implements reasonable safeguards as required under the DPDP Act, including: &nbsp;</span></div>
+					<div class="pdf24_01" style="left:10.5017em;top:157.1548em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
+					<div class="pdf24_01" style="left:10.5017em;top:159.0448em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
+					<div class="pdf24_01" style="left:10.5017em;top:160.9248em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
+					<div class="pdf24_01" style="left:10.5017em;top:162.8173em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:157.0259em;"><span class="pdf24_10 pdf24_06 pdf24_42" style="word-spacing:0.0003em;">Encryption of data at rest and in transit; &nbsp;</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:158.9159em;"><span class="pdf24_10 pdf24_06 pdf24_29" style="word-spacing:0.0012em;">Role-based and least-privilege access controls; &nbsp;</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:160.7959em;"><span class="pdf24_10 pdf24_06 pdf24_42" style="word-spacing:-0.0001em;">Continuous monitoring, audit logs, and breach detection mechanisms; &nbsp;</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:162.6885em;"><span class="pdf24_10 pdf24_06 pdf24_40" style="word-spacing:0.0007em;">Secure hosting and infrastructure practices. &nbsp;</span></div>
+					<div class="pdf24_01" style="left:7.502em;top:164.5638em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
+					<div class="pdf24_01" style="left:9.0017em;top:164.5784em;"><span class="pdf24_10 pdf24_06 pdf24_12" style="word-spacing:0.0024em;">No system can be guaranteed to be completely secure, and users acknowledge inherent risks. &nbsp;</span></div>
+					<div class="pdf24_01" style="left:6.002em;top:168.3584em;"><span class="pdf24_05 pdf24_06 pdf24_38" style="word-spacing:0.0009em;">10. Data Retention, Inactivity, and Deletion Policy &nbsp;</span></div>
+					<div class="pdf24_01" style="left:7.502em;top:170.2238em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
+					<div class="pdf24_01" style="left:9.0017em;top:170.2384em;"><span class="pdf24_10 pdf24_06 pdf24_17" style="word-spacing:0.0931em;">Personal data is retained only for as long as necessary to fulfill the stated purposes or legal &nbsp;</span></div>
+					<div class="pdf24_01" style="left:9.0017em;top:171.4584em;"><span class="pdf24_10 pdf24_06 pdf24_17">obligations. &nbsp;</span></div>
+					<div class="pdf24_01" style="left:7.502em;top:173.3338em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
+					<div class="pdf24_01" style="left:9.0017em;top:173.3484em;"><span class="pdf24_05 pdf24_06 pdf24_31" style="word-spacing:0.2306em;">In case a Client account becomes inactive due to payment default, non-renewal, or &nbsp;</span></div>
+					<div class="pdf24_01" style="left:9.0017em;top:174.5684em;"><span class="pdf24_05 pdf24_06 pdf24_11">termination</span><span class="pdf24_10 pdf24_06 pdf24_11">: &nbsp;</span></div>
+					<div class="pdf24_01" style="left:10.5017em;top:176.5889em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:176.4601em;"><span class="pdf24_10 pdf24_06 pdf24_32" style="word-spacing:0.0052em;">All recruiter accounts linked to the Client shall be disabled; &nbsp;</span></div>
+					<div class="pdf24_01" style="left:10.5017em;top:178.7306em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
+					<div class="pdf24_01" style="left:10.5017em;top:183.0606em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:178.6018em;"><span class="pdf24_10 pdf24_06 pdf24_18" style="word-spacing:0.2695em;">All client data, recruiter data, candidate profiles, resumes, timelines, workflows, &nbsp;</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:179.8218em;"><span class="pdf24_10 pdf24_06 pdf24_29" style="word-spacing:-0.0453em;">assessments, assessment results, recordings, notes, and communication history </span><span class="pdf24_05 pdf24_06 pdf24_54" style="word-spacing:-0.0323em;">shall be &nbsp;</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:181.0418em;"><span class="pdf24_05 pdf24_06 pdf24_29" style="word-spacing:0.0004em;">permanently deleted </span><span class="pdf24_10 pdf24_06 pdf24_42" style="word-spacing:0.0008em;">from the Platform after the applicable grace period; &nbsp;</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:182.9318em;"><span class="pdf24_10 pdf24_06 pdf24_45" style="word-spacing:0.1653em;">Deletion shall be irreversible and includes all backups, logs, and derived datasets, &nbsp;</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:184.1518em;"><span class="pdf24_10 pdf24_06 pdf24_07" style="word-spacing:-0.0051em;">subject to statutory retention requirements. &nbsp;</span></div>
+					<div class="pdf24_01" style="left:7.502em;top:186.0271em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
+					<div class="pdf24_01" style="left:9.0017em;top:186.0418em;"><span class="pdf24_10 pdf24_06 pdf24_37" style="word-spacing:-0.0077em;">alabty shall not be liable for any data loss arising from such deletion due to payment default or &nbsp;</span></div>
+					<div class="pdf24_01" style="left:9.0017em;top:187.2618em;z-index:430;"><span class="pdf24_10 pdf24_06 pdf24_55" style="word-spacing:-0.0006em;">prolonged inactivity. &nbsp;</span></div>
+					<div class="pdf24_01" style="left:6.002em;top:191.0318em;"><span class="pdf24_05 pdf24_06 pdf24_56" style="word-spacing:0.0046em;">11. Rights of Data Principals (Candidates and Users) &nbsp;</span></div>
+					<div class="pdf24_01" style="left:9.0017em;top:192.9243em;"><span class="pdf24_10 pdf24_06 pdf24_22" style="word-spacing:-0.0002em;">Subject to applicable law, Data Principals have the right to: &nbsp;</span></div>
+					<div class="pdf24_01" style="left:7.502em;top:192.9096em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
+					<div class="pdf24_01" style="left:10.5017em;top:194.9431em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
+					<div class="pdf24_01" style="left:10.5017em;top:196.8331em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
+					<div class="pdf24_01" style="left:10.5017em;top:198.7131em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
+					<div class="pdf24_01" style="left:10.5017em;top:200.6031em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
+					<div class="pdf24_01" style="left:10.5017em;top:202.4931em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:194.8143em;"><span class="pdf24_10 pdf24_06 pdf24_17" style="word-spacing:-0.0019em;">Access and review their personal data; &nbsp;</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:196.7043em;"><span class="pdf24_10 pdf24_06 pdf24_23" style="word-spacing:0.0063em;">Request correction or updating of inaccurate data; &nbsp;</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:198.5843em;"><span class="pdf24_10 pdf24_06 pdf24_32" style="word-spacing:-0.0024em;">Withdraw consent for future processing; &nbsp;</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:200.4743em;"><span class="pdf24_10 pdf24_06 pdf24_12" style="word-spacing:0.0044em;">Request erasure of personal data where legally permissible; &nbsp;</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:202.3643em;z-index:741;"><span class="pdf24_10 pdf24_06 pdf24_57" style="word-spacing:0.0085em;">Lodge grievances with alabty's grievance officer. &nbsp;</span></div>
+					<div class="pdf24_01" style="left:6.002em;top:206.1443em;"><span class="pdf24_05 pdf24_06 pdf24_58" style="word-spacing:-0.0017em;">12. Cross-Border Data Transfers &nbsp;</span></div>
+					<div class="pdf24_01" style="left:7.502em;top:208.0113em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
+					<div class="pdf24_01" style="left:7.502em;top:209.9013em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
+					<div class="pdf24_01" style="left:9.0017em;top:208.0259em;z-index:847;"><span class="pdf24_10 pdf24_06 pdf24_47" style="word-spacing:0.0045em;">Personal data may be processed or stored on servers located outside India where necessary. &nbsp;</span></div>
+					<div class="pdf24_01" style="left:9.0017em;top:209.9159em;"><span class="pdf24_10 pdf24_06 pdf24_18" style="word-spacing:0.112em;">Appropriate safeguards and contractual protections are implemented in accordance with the &nbsp;</span></div>
+					<div class="pdf24_01" style="left:9.0017em;top:211.1359em;"><span class="pdf24_10 pdf24_06 pdf24_18" style="word-spacing:-0.0844em;">DPDP Act. &nbsp;</span></div>
+					<div class="pdf24_01" style="left:6.002em;top:214.9159em;"><span class="pdf24_05 pdf24_06 pdf24_44" style="word-spacing:-0.0045em;">13. Children's and Minor Data &nbsp;</span></div>
+					<div class="pdf24_01" style="left:7.502em;top:216.7813em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
+					<div class="pdf24_01" style="left:7.502em;top:218.6713em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
+					<div class="pdf24_01" style="left:9.0017em;top:216.7959em;"><span class="pdf24_10 pdf24_06 pdf24_39" style="word-spacing:0.0043em;">The Platform is not intended for minors. &nbsp;</span></div>
+					<div class="pdf24_01" style="left:9.0017em;top:218.6859em;"><span class="pdf24_10 pdf24_06 pdf24_39" style="word-spacing:0.0042em;">alabty does not knowingly process personal data of children without legally valid consent. &nbsp;</span></div>
+					<div class="pdf24_01" style="left:6.002em;top:222.4684em;"><span class="pdf24_05 pdf24_06 pdf24_59" style="word-spacing:-0.0082em;">14. Compliance, Audits, and Breach Response &nbsp;</span></div>
+					<div class="pdf24_01" style="left:7.502em;top:224.3438em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
+					<div class="pdf24_01" style="left:7.502em;top:226.2238em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
+					<div class="pdf24_01" style="left:9.0017em;top:224.3584em;"><span class="pdf24_10 pdf24_06 pdf24_42" style="word-spacing:-0.0097em;">alabty follows due diligence obligations under the DPDP Act. &nbsp;</span></div>
+					<div class="pdf24_01" style="left:9.0017em;top:226.2384em;"><span class="pdf24_10 pdf24_06 pdf24_31" style="word-spacing:-0.0072em;">In the event of a personal data breach, alabty shall take reasonable steps to contain, assess, and &nbsp;</span></div>
+					<div class="pdf24_01" style="left:9.0017em;top:227.4584em;z-index:1302;"><span class="pdf24_10 pdf24_06 pdf24_56" style="word-spacing:0.006em;">notify affected parties and authorities where required by law. &nbsp;</span></div>
+					<div class="pdf24_01" style="left:6.002em;top:231.2384em;"><span class="pdf24_05 pdf24_06 pdf24_12" style="word-spacing:-0.0122em;">15. Policy Updates and Amendments &nbsp;</span></div>
+					<div class="pdf24_01" style="left:7.502em;top:233.1138em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
+					<div class="pdf24_01" style="left:7.502em;top:234.9955em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
+					<div class="pdf24_01" style="left:9.0017em;top:233.1284em;"><span class="pdf24_10 pdf24_06 pdf24_09" style="word-spacing:-0.0005em;">This Policy may be updated periodically to reflect legal, regulatory, or operational changes. &nbsp;</span></div>
+					<div class="pdf24_01" style="left:9.0017em;top:235.0101em;z-index:1491;"><span class="pdf24_10 pdf24_06 pdf24_30" style="word-spacing:0.0042em;">Continued use of the Platform after updates constitutes acceptance of the revised Policy. &nbsp;</span></div>
+					<div class="pdf24_01" style="left:6.002em;top:238.6018em;"><span class="pdf24_05 pdf24_06 pdf24_30" style="word-spacing:0.0059em;">16. Grievance Redressal and Contact &nbsp;</span></div>
+					<div class="pdf24_01" style="left:9.0017em;top:240.4918em;"><span class="pdf24_10 pdf24_06 pdf24_45" style="word-spacing:0.0004em;">For privacy-related queries, rights requests, or complaints: &nbsp;</span></div>
+					<div class="pdf24_01" style="left:7.502em;top:240.4771em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
+					<div class="pdf24_01" style="left:10.5017em;top:242.5106em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
+					<div class="pdf24_01" style="left:10.5017em;top:244.3906em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
+					<div class="pdf24_01" style="left:12.0017em;top:242.3818em;"><span class="pdf24_05 pdf24_06 pdf24_26" style="word-spacing:-0.0018em;">Email: </span><a href="mailto:support@alabty.com" target="_blank"><span class="pdf24_62 pdf24_06 pdf24_63">support@alabty.com &nbsp;</span></a></div>
+					<div class="pdf24_01" style="left:12.0017em;top:244.2618em;"><span class="pdf24_05 pdf24_06 pdf24_64" style="word-spacing:0.0266em;">Website: </span><a href="http://www.alabty.com/" target="_blank"><span class="pdf24_62 pdf24_06 pdf24_65">www.alabty.com &nbsp;</span></a></div>
+					<div class="pdf24_01" style="left:6.002em;top:246.1518em;"><span class="pdf24_10 pdf24_06 pdf24_37" style="word-spacing:-0.003em;">By using the Platform, you acknowledge that you have read, understood, and agreed to this Privacy &nbsp;</span></div>
+					<div class="pdf24_01" style="left:6.002em;top:247.3718em;"><span class="pdf24_10 pdf24_06 pdf24_19" style="word-spacing:-0.0028em;">Policy in compliance with the Digital Personal Data Protection Act, 2023. &nbsp;</span></div>
 				</div>
 			</div>
 		</div>
-		<div class="pdf24_ pdf24_02">
-			<div class="pdf24_view">
-				<div class="pdf24_03 pdf24_04">
-					<div class="pdf24_01" style="left:10.5017em;top:6.094em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:5.9652em;"><span class="pdf24_10 pdf24_06 pdf24_17" style="word-spacing:-0.0031em;">Cookies and similar technologies used for session management and analytics. &nbsp;</span></div>
-					<div class="pdf24_01" style="left:6.002em;top:9.7452em;"><span class="pdf24_05 pdf24_06 pdf24_42" style="word-spacing:-0.0014em;">3. Lawful Basis and Consent under DPD</span><span class="pdf24_05 pdf24_06 pdf24_43">P</span><span class="pdf24_05 pdf24_06 pdf24_14">A</span><span class="pdf24_05 pdf24_06 pdf24_44" style="word-spacing:0.0067em;">ct, 2023 &nbsp;</span></div>
-					<div class="pdf24_01" style="left:7.502em;top:11.6106em;"><span class="pdf24_27 pdf24_28 pdf24_16" style="word-spacing:1.0969em;">• </span><span class="pdf24_10 pdf24_06 pdf24_40" style="word-spacing:-0.0018em;">Personal data is processed strictly on the basis of: &nbsp;</span></div>
-					<div class="pdf24_01" style="left:10.5017em;top:13.644em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
-					<div class="pdf24_01" style="left:10.5017em;top:15.534em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
-					<div class="pdf24_01" style="left:10.5017em;top:17.424em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
-					<div class="pdf24_01" style="left:10.5017em;top:19.304em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:13.5152em;"><span class="pdf24_05 pdf24_06 pdf24_41" style="word-spacing:0.0022em;">Explicit consent </span><span class="pdf24_10 pdf24_06 pdf24_29" style="word-spacing:-0.0014em;">provided by the Data Principal; &nbsp;</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:15.4052em;"><span class="pdf24_05 pdf24_06 pdf24_41" style="word-spacing:-0.0044em;">Contractual necessity </span><span class="pdf24_10 pdf24_06 pdf24_12" style="word-spacing:-0.0006em;">for providing Platform services; &nbsp;</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:17.2952em;"><span class="pdf24_05 pdf24_06 pdf24_29" style="word-spacing:0.0033em;">Legal obligations </span><span class="pdf24_10 pdf24_06 pdf24_45" style="word-spacing:0.0005em;">imposed by applicable Indian law; &nbsp;</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:19.1752em;"><span class="pdf24_05 pdf24_06 pdf24_31" style="word-spacing:0.0408em;">Legitimate uses </span><span class="pdf24_10 pdf24_06 pdf24_38" style="word-spacing:0.0219em;">permitted under the DPDP Act, including security, fraud prevention, &nbsp;</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:20.3977em;z-index:385;"><span class="pdf24_10 pdf24_06 pdf24_46" style="word-spacing:0.0053em;">and service integrity. &nbsp;</span></div>
-					<div class="pdf24_01" style="left:7.502em;top:22.273em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
-					<div class="pdf24_01" style="left:9.0017em;top:22.2877em;"><span class="pdf24_10 pdf24_06 pdf24_40" style="word-spacing:-0.0217em;">Recruiters explicitly confirm that </span><span class="pdf24_05 pdf24_06 pdf24_37" style="word-spacing:-0.0271em;">valid candidate consent </span><span class="pdf24_10 pdf24_06 pdf24_07" style="word-spacing:-0.0266em;">has been obtained before uploading &nbsp;</span></div>
-					<div class="pdf24_01" style="left:9.0017em;top:23.5077em;"><span class="pdf24_10 pdf24_06 pdf24_47" style="word-spacing:0.0032em;">or processing any candidate data on alabty.com or its subdomains. &nbsp;</span></div>
-					<div class="pdf24_01" style="left:6.002em;top:27.2877em;"><span class="pdf24_05 pdf24_06 pdf24_23" style="word-spacing:0.005em;">4. Purpose Limitation and Use of Personal Data &nbsp;</span></div>
-					<div class="pdf24_01" style="left:7.502em;top:29.163em;"><span class="pdf24_27 pdf24_28 pdf24_16" style="word-spacing:1.0969em;">• </span><span class="pdf24_10 pdf24_06 pdf24_17" style="word-spacing:-0.0031em;">Personal data is processed only for clearly defined and lawful purposes, including: &nbsp;</span></div>
-					<div class="pdf24_01" style="left:10.5017em;top:31.1865em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
-					<div class="pdf24_01" style="left:10.5017em;top:33.0765em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
-					<div class="pdf24_01" style="left:10.5017em;top:34.9682em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
-					<div class="pdf24_01" style="left:10.5017em;top:36.8582em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
-					<div class="pdf24_01" style="left:10.5017em;top:38.7382em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:31.0577em;"><span class="pdf24_10 pdf24_06 pdf24_48" style="word-spacing:-0.0306em;">Delivery of </span><span class="pdf24_10 pdf24_06 pdf24_49">A</span><span class="pdf24_10 pdf24_06 pdf24_25">T</span><span class="pdf24_10 pdf24_06 pdf24_50" style="word-spacing:0.0074em;">S, recruitment workflow, and campus placement services; &nbsp;</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:32.9477em;"><span class="pdf24_10 pdf24_06 pdf24_45" style="word-spacing:0.0005em;">Candidate-job matching and opportunity recommendations; &nbsp;</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:34.8393em;"><span class="pdf24_10 pdf24_06 pdf24_11" style="word-spacing:-0.0052em;">AI-assisted screening, assessments, and analytics; &nbsp;</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:36.7293em;"><span class="pdf24_10 pdf24_06 pdf24_45" style="word-spacing:0.0014em;">Recruitment-related communication between recruiters, employers, and candidates; &nbsp;</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:38.6093em;"><span class="pdf24_10 pdf24_06 pdf24_38" style="word-spacing:0.0032em;">Platform security, audit, compliance monitoring, billing, and support. &nbsp;</span></div>
-					<div class="pdf24_01" style="left:7.502em;top:40.4847em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
-					<div class="pdf24_01" style="left:9.0017em;top:40.4993em;"><span class="pdf24_10 pdf24_06 pdf24_40" style="word-spacing:0.0037em;">Personal data is </span><span class="pdf24_05 pdf24_06 pdf24_07" style="word-spacing:-0.0072em;">not sold</span><span class="pdf24_10 pdf24_06 pdf24_29" style="word-spacing:0.0005em;">, leased, or used for unrelated commercial exploitation. &nbsp;</span></div>
-					<div class="pdf24_01" style="left:6.002em;top:44.2793em;"><span class="pdf24_05 pdf24_06 pdf24_42" style="word-spacing:-0.0014em;">5. Candidate Communication and Consent-Based Outreach &nbsp;</span></div>
-					<div class="pdf24_01" style="left:7.502em;top:46.1447em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
-					<div class="pdf24_01" style="left:9.0017em;top:46.1593em;"><span class="pdf24_10 pdf24_06 pdf24_51" style="word-spacing:-0.0031em;">Subject to valid and lawful consent: &nbsp;</span></div>
-					<div class="pdf24_01" style="left:10.5017em;top:48.1807em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:48.0519em;"><span class="pdf24_10 pdf24_06 pdf24_29" style="word-spacing:0.1199em;">alabty may directly communicate relevant job opportunities to candidates where its &nbsp;</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:49.2718em;"><span class="pdf24_10 pdf24_06 pdf24_18" style="word-spacing:0.0038em;">matching systems identify suitability; &nbsp;</span></div>
-					<div class="pdf24_01" style="left:10.5017em;top:51.2907em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
-					<div class="pdf24_01" style="left:10.5017em;top:53.1807em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:51.1619em;"><span class="pdf24_10 pdf24_06 pdf24_40" style="word-spacing:-0.0017em;">Recruiters may contact candidates only for genuine, specific job vacancies; &nbsp;</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:53.0519em;"><span class="pdf24_10 pdf24_06 pdf24_23" style="word-spacing:0.004em;">Candidates retain the right to opt out or withdraw consent at any time. &nbsp;</span></div>
-					<div class="pdf24_01" style="left:7.502em;top:54.9272em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
-					<div class="pdf24_01" style="left:9.0017em;top:54.9418em;"><span class="pdf24_10 pdf24_06 pdf24_32" style="word-spacing:0.005em;">alabty does not guarantee interviews, job offers, or responses. &nbsp;</span></div>
-					<div class="pdf24_01" style="left:6.002em;top:58.7118em;"><span class="pdf24_05 pdf24_06 pdf24_52" style="word-spacing:-0.0134em;">6. AI Processing and Automated Tools &nbsp;</span></div>
-					<div class="pdf24_01" style="left:7.502em;top:60.5872em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
-					<div class="pdf24_01" style="left:9.0017em;top:60.6018em;"><span class="pdf24_10 pdf24_06 pdf24_29" style="word-spacing:0.1853em;">The Platform uses AI and automation tools solely for assistive purposes such as parsing, &nbsp;</span></div>
-					<div class="pdf24_01" style="left:9.0017em;top:61.8235em;"><span class="pdf24_10 pdf24_06 pdf24_45" style="word-spacing:0.0018em;">ranking, screening, and workflow optimization. &nbsp;</span></div>
+		
+		<!-- Footer -->
+		<footer class="footer">
+			<div class="footer-container">
+				<div class="footer-content">
+					<img src="/src/assets/logo.png" alt="alabty Logo" class="footer-logo" />
+					<p class="footer-tagline">
+						Your Complete Recruitment Engine – Automated, Accurate, Unstoppable
+					</p>
+					
+					<ul class="footer-links">
+						<li><a href="/">Home</a></li>
+						<li class="footer-separator">|</li>
+						<li><a href="/#features">Features</a></li>
+						<li class="footer-separator">|</li>
+						<li><a href="/#faq">FAQ</a></li>
+						<li class="footer-separator">|</li>
+						<li><a href="/Privacy-Policy-alabty.html">Privacy Policy</a></li>
+						<li class="footer-separator">|</li>
+						<li><a href="/Terms-and-Conditions-alabty.html">Terms of Service</a></li>
+					</ul>
+					
+					<div class="social-links">
+						<a href="https://www.linkedin.com/company/alabty/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+							<svg fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
+						</a>
+						<a href="https://www.x.com/AlabtyC" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Twitter">
+							<svg fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" /></svg>
+						</a>
+						<a href="https://www.facebook.com/alabtydotcom" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+							<svg fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" /></svg>
+						</a>
+						<a href="https://www.instagram.com/alabty.com_official/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+							<svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" /></svg>
+						</a>
+						<a href="https://www.youtube.com/@alabtyofficial1416" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="YouTube">
+							<svg fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" /></svg>
+						</a>
+					</div>
+					
+					<p class="footer-copyright">
+						© 2025 alabty. All rights reserved.
+					</p>
 				</div>
+				<div class="footer-divider"></div>
 			</div>
-		</div>
-		<div class="pdf24_ pdf24_02">
-			<div class="pdf24_view">
-				<div class="pdf24_03 pdf24_04">
-					<div class="pdf24_01" style="left:7.502em;top:5.9505em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
-					<div class="pdf24_01" style="left:7.502em;top:7.8405em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
-					<div class="pdf24_01" style="left:9.0017em;top:5.9652em;"><span class="pdf24_10 pdf24_06 pdf24_29" style="word-spacing:0.002em;">AI systems operate under human oversight and </span><span class="pdf24_05 pdf24_06 pdf24_19" style="word-spacing:0.0006em;">do not take final hiring decisions</span><span class="pdf24_10 pdf24_06 pdf24_19" style="word-spacing:0.0006em;">. &nbsp;</span></div>
-					<div class="pdf24_01" style="left:9.0017em;top:7.8552em;"><span class="pdf24_10 pdf24_06 pdf24_17" style="word-spacing:-0.0043em;">Recruiters and employers remain fully responsible for all employment decisions. &nbsp;</span></div>
-					<div class="pdf24_01" style="left:6.002em;top:11.6252em;"><span class="pdf24_05 pdf24_06 pdf24_30" style="word-spacing:0.0029em;">7. Data Sharing and Disclosure Controls &nbsp;</span></div>
-					<div class="pdf24_01" style="left:7.502em;top:13.5005em;"><span class="pdf24_27 pdf24_28 pdf24_16" style="word-spacing:1.0969em;">• </span><span class="pdf24_10 pdf24_06 pdf24_45" style="word-spacing:0.0005em;">Personal data may be shared only: &nbsp;</span></div>
-					<div class="pdf24_01" style="left:10.5017em;top:15.534em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
-					<div class="pdf24_01" style="left:10.5017em;top:17.424em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:15.4052em;"><span class="pdf24_10 pdf24_06 pdf24_32" style="word-spacing:0.0024em;">With authorized recruiters or employers for specific recruitment purposes; &nbsp;</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:17.2952em;"><span class="pdf24_10 pdf24_06 pdf24_18" style="word-spacing:0.6785em;">With vetted service providers acting as sub-processors for infrastructure, &nbsp;</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:18.5152em;"><span class="pdf24_10 pdf24_06 pdf24_18" style="word-spacing:0.0053em;">communication, or security; &nbsp;</span></div>
-					<div class="pdf24_01" style="left:10.5017em;top:20.5265em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
-					<div class="pdf24_01" style="left:10.5017em;top:22.4165em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:20.3977em;"><span class="pdf24_10 pdf24_06 pdf24_32" style="word-spacing:-0.0043em;">Through client-owned third-party APIs integrated using the client’s own credentials; &nbsp;</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:22.2877em;z-index:490;"><span class="pdf24_10 pdf24_06 pdf24_53" style="word-spacing:0.0097em;">When required by law, court order, or regulatory authority. &nbsp;</span></div>
-					<div class="pdf24_01" style="left:7.502em;top:24.163em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
-					<div class="pdf24_01" style="left:9.0017em;top:24.1777em;"><span class="pdf24_10 pdf24_06 pdf24_40" style="word-spacing:-0.0016em;">Cross-client data access is technically restricted and prohibited without consent. &nbsp;</span></div>
-					<div class="pdf24_01" style="left:6.002em;top:27.9477em;"><span class="pdf24_05 pdf24_06 pdf24_45" style="word-spacing:-0.0114em;">8. External APIs and Third-Party Integrations &nbsp;</span></div>
-					<div class="pdf24_01" style="left:7.502em;top:29.823em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
-					<div class="pdf24_01" style="left:7.502em;top:31.713em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
-					<div class="pdf24_01" style="left:9.0017em;top:29.8377em;"><span class="pdf24_10 pdf24_06 pdf24_11" style="word-spacing:-0.0078em;">Clients may integrate third-party tools using their own APIs, accounts, and licenses. &nbsp;</span></div>
-					<div class="pdf24_01" style="left:9.0017em;top:31.7277em;"><span class="pdf24_10 pdf24_06 pdf24_40" style="word-spacing:0.0299em;">alabty does not control such third-party services and is not responsible for their data handling &nbsp;</span></div>
-					<div class="pdf24_01" style="left:9.0017em;top:32.9477em;"><span class="pdf24_10 pdf24_06 pdf24_26">practices. &nbsp;</span></div>
-					<div class="pdf24_01" style="left:7.502em;top:34.8247em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
-					<div class="pdf24_01" style="left:9.0017em;top:34.8393em;"><span class="pdf24_10 pdf24_06 pdf24_11" style="word-spacing:-0.0039em;">Responsibility for third-party compliance remains with the integrating client. &nbsp;</span></div>
-					<div class="pdf24_01" style="left:6.002em;top:38.6093em;"><span class="pdf24_05 pdf24_06 pdf24_23" style="word-spacing:0.0045em;">9. Data Security Safeguards &nbsp;</span></div>
-					<div class="pdf24_01" style="left:7.502em;top:40.4847em;"><span class="pdf24_27 pdf24_28 pdf24_16" style="word-spacing:1.0969em;">• </span><span class="pdf24_10 pdf24_06 pdf24_45" style="word-spacing:-0.0102em;">alabty implements reasonable safeguards as required under the DPDP Act, including: &nbsp;</span></div>
-					<div class="pdf24_01" style="left:10.5017em;top:42.5182em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
-					<div class="pdf24_01" style="left:10.5017em;top:44.4082em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
-					<div class="pdf24_01" style="left:10.5017em;top:46.2882em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
-					<div class="pdf24_01" style="left:10.5017em;top:48.1807em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:42.3893em;"><span class="pdf24_10 pdf24_06 pdf24_42" style="word-spacing:0.0003em;">Encryption of data at rest and in transit; &nbsp;</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:44.2793em;"><span class="pdf24_10 pdf24_06 pdf24_29" style="word-spacing:0.0012em;">Role-based and least-privilege access controls; &nbsp;</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:46.1593em;"><span class="pdf24_10 pdf24_06 pdf24_42" style="word-spacing:-0.0001em;">Continuous monitoring, audit logs, and breach detection mechanisms; &nbsp;</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:48.0519em;"><span class="pdf24_10 pdf24_06 pdf24_40" style="word-spacing:0.0007em;">Secure hosting and infrastructure practices. &nbsp;</span></div>
-					<div class="pdf24_01" style="left:7.502em;top:49.9272em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
-					<div class="pdf24_01" style="left:9.0017em;top:49.9418em;"><span class="pdf24_10 pdf24_06 pdf24_12" style="word-spacing:0.0024em;">No system can be guaranteed to be completely secure, and users acknowledge inherent risks. &nbsp;</span></div>
-					<div class="pdf24_01" style="left:6.002em;top:53.7218em;"><span class="pdf24_05 pdf24_06 pdf24_38" style="word-spacing:0.0009em;">10. Data Retention, Inactivity, and Deletion Policy &nbsp;</span></div>
-					<div class="pdf24_01" style="left:7.502em;top:55.5872em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
-					<div class="pdf24_01" style="left:9.0017em;top:55.6018em;"><span class="pdf24_10 pdf24_06 pdf24_17" style="word-spacing:0.0931em;">Personal data is retained only for as long as necessary to fulfill the stated purposes or legal &nbsp;</span></div>
-					<div class="pdf24_01" style="left:9.0017em;top:56.8218em;"><span class="pdf24_10 pdf24_06 pdf24_17">obligations. &nbsp;</span></div>
-					<div class="pdf24_01" style="left:7.502em;top:58.6972em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
-					<div class="pdf24_01" style="left:9.0017em;top:58.7118em;"><span class="pdf24_05 pdf24_06 pdf24_31" style="word-spacing:0.2306em;">In case a Client account becomes inactive due to payment default, non-renewal, or &nbsp;</span></div>
-					<div class="pdf24_01" style="left:9.0017em;top:59.9318em;"><span class="pdf24_05 pdf24_06 pdf24_11">termination</span><span class="pdf24_10 pdf24_06 pdf24_11">: &nbsp;</span></div>
-					<div class="pdf24_01" style="left:10.5017em;top:61.9523em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:61.8235em;"><span class="pdf24_10 pdf24_06 pdf24_32" style="word-spacing:0.0052em;">All recruiter accounts linked to the Client shall be disabled; &nbsp;</span></div>
-				</div>
-			</div>
-		</div>
-		<div class="pdf24_ pdf24_02">
-			<div class="pdf24_view">
-				<div class="pdf24_03 pdf24_04">
-					<div class="pdf24_01" style="left:10.5017em;top:6.094em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
-					<div class="pdf24_01" style="left:10.5017em;top:10.424em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:5.9652em;"><span class="pdf24_10 pdf24_06 pdf24_18" style="word-spacing:0.2695em;">All client data, recruiter data, candidate profiles, resumes, timelines, workflows, &nbsp;</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:7.1852em;"><span class="pdf24_10 pdf24_06 pdf24_29" style="word-spacing:-0.0453em;">assessments, assessment results, recordings, notes, and communication history </span><span class="pdf24_05 pdf24_06 pdf24_54" style="word-spacing:-0.0323em;">shall be &nbsp;</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:8.4052em;"><span class="pdf24_05 pdf24_06 pdf24_29" style="word-spacing:0.0004em;">permanently deleted </span><span class="pdf24_10 pdf24_06 pdf24_42" style="word-spacing:0.0008em;">from the Platform after the applicable grace period; &nbsp;</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:10.2952em;"><span class="pdf24_10 pdf24_06 pdf24_45" style="word-spacing:0.1653em;">Deletion shall be irreversible and includes all backups, logs, and derived datasets, &nbsp;</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:11.5152em;"><span class="pdf24_10 pdf24_06 pdf24_07" style="word-spacing:-0.0051em;">subject to statutory retention requirements. &nbsp;</span></div>
-					<div class="pdf24_01" style="left:7.502em;top:13.3905em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
-					<div class="pdf24_01" style="left:9.0017em;top:13.4052em;"><span class="pdf24_10 pdf24_06 pdf24_37" style="word-spacing:-0.0077em;">alabty shall not be liable for any data loss arising from such deletion due to payment default or &nbsp;</span></div>
-					<div class="pdf24_01" style="left:9.0017em;top:14.6252em;z-index:430;"><span class="pdf24_10 pdf24_06 pdf24_55" style="word-spacing:-0.0006em;">prolonged inactivity. &nbsp;</span></div>
-					<div class="pdf24_01" style="left:6.002em;top:18.3952em;"><span class="pdf24_05 pdf24_06 pdf24_56" style="word-spacing:0.0046em;">11. Rights of Data Principals (Candidates and Users) &nbsp;</span></div>
-					<div class="pdf24_01" style="left:9.0017em;top:20.2877em;"><span class="pdf24_10 pdf24_06 pdf24_22" style="word-spacing:-0.0002em;">Subject to applicable law, Data Principals have the right to: &nbsp;</span></div>
-					<div class="pdf24_01" style="left:7.502em;top:20.273em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
-					<div class="pdf24_01" style="left:10.5017em;top:22.3065em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
-					<div class="pdf24_01" style="left:10.5017em;top:24.1965em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
-					<div class="pdf24_01" style="left:10.5017em;top:26.0765em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
-					<div class="pdf24_01" style="left:10.5017em;top:27.9665em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
-					<div class="pdf24_01" style="left:10.5017em;top:29.8565em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:22.1777em;"><span class="pdf24_10 pdf24_06 pdf24_17" style="word-spacing:-0.0019em;">Access and review their personal data; &nbsp;</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:24.0677em;"><span class="pdf24_10 pdf24_06 pdf24_23" style="word-spacing:0.0063em;">Request correction or updating of inaccurate data; &nbsp;</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:25.9477em;"><span class="pdf24_10 pdf24_06 pdf24_32" style="word-spacing:-0.0024em;">Withdraw consent for future processing; &nbsp;</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:27.8377em;"><span class="pdf24_10 pdf24_06 pdf24_12" style="word-spacing:0.0044em;">Request erasure of personal data where legally permissible; &nbsp;</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:29.7277em;z-index:741;"><span class="pdf24_10 pdf24_06 pdf24_57" style="word-spacing:0.0085em;">Lodge grievances with alabty’s grievance officer. &nbsp;</span></div>
-					<div class="pdf24_01" style="left:6.002em;top:33.5077em;"><span class="pdf24_05 pdf24_06 pdf24_58" style="word-spacing:-0.0017em;">12. Cross-Border Data Transfers &nbsp;</span></div>
-					<div class="pdf24_01" style="left:7.502em;top:35.3747em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
-					<div class="pdf24_01" style="left:7.502em;top:37.2647em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
-					<div class="pdf24_01" style="left:9.0017em;top:35.3893em;z-index:847;"><span class="pdf24_10 pdf24_06 pdf24_47" style="word-spacing:0.0045em;">Personal data may be processed or stored on servers located outside India where necessary. &nbsp;</span></div>
-					<div class="pdf24_01" style="left:9.0017em;top:37.2793em;"><span class="pdf24_10 pdf24_06 pdf24_18" style="word-spacing:0.112em;">Appropriate safeguards and contractual protections are implemented in accordance with the &nbsp;</span></div>
-					<div class="pdf24_01" style="left:9.0017em;top:38.4993em;"><span class="pdf24_10 pdf24_06 pdf24_18" style="word-spacing:-0.0844em;">DPDP Act. &nbsp;</span></div>
-					<div class="pdf24_01" style="left:6.002em;top:42.2793em;"><span class="pdf24_05 pdf24_06 pdf24_44" style="word-spacing:-0.0045em;">13. Children’s and Minor Data &nbsp;</span></div>
-					<div class="pdf24_01" style="left:7.502em;top:44.1447em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
-					<div class="pdf24_01" style="left:7.502em;top:46.0347em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
-					<div class="pdf24_01" style="left:9.0017em;top:44.1593em;"><span class="pdf24_10 pdf24_06 pdf24_39" style="word-spacing:0.0043em;">The Platform is not intended for minors. &nbsp;</span></div>
-					<div class="pdf24_01" style="left:9.0017em;top:46.0493em;"><span class="pdf24_10 pdf24_06 pdf24_39" style="word-spacing:0.0042em;">alabty does not knowingly process personal data of children without legally valid consent. &nbsp;</span></div>
-					<div class="pdf24_01" style="left:6.002em;top:49.8318em;"><span class="pdf24_05 pdf24_06 pdf24_59" style="word-spacing:-0.0082em;">14. Compliance, Audits, and Breach Response &nbsp;</span></div>
-					<div class="pdf24_01" style="left:7.502em;top:51.7072em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
-					<div class="pdf24_01" style="left:7.502em;top:53.5872em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
-					<div class="pdf24_01" style="left:9.0017em;top:51.7218em;"><span class="pdf24_10 pdf24_06 pdf24_42" style="word-spacing:-0.0097em;">alabty follows due diligence obligations under the DPDP Act. &nbsp;</span></div>
-					<div class="pdf24_01" style="left:9.0017em;top:53.6018em;"><span class="pdf24_10 pdf24_06 pdf24_31" style="word-spacing:-0.0072em;">In the event of a personal data breach, alabty shall take reasonable steps to contain, assess, and &nbsp;</span></div>
-					<div class="pdf24_01" style="left:9.0017em;top:54.8218em;z-index:1302;"><span class="pdf24_10 pdf24_06 pdf24_56" style="word-spacing:0.006em;">notify affected parties and authorities where required by law. &nbsp;</span></div>
-					<div class="pdf24_01" style="left:6.002em;top:58.6018em;"><span class="pdf24_05 pdf24_06 pdf24_12" style="word-spacing:-0.0122em;">15. Policy Updates and Amendments &nbsp;</span></div>
-					<div class="pdf24_01" style="left:7.502em;top:60.4772em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
-					<div class="pdf24_01" style="left:7.502em;top:62.3589em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
-					<div class="pdf24_01" style="left:9.0017em;top:60.4918em;"><span class="pdf24_10 pdf24_06 pdf24_09" style="word-spacing:-0.0005em;">This Policy may be updated periodically to reflect legal, regulatory, or operational changes. &nbsp;</span></div>
-					<div class="pdf24_01" style="left:9.0017em;top:62.3735em;z-index:1491;"><span class="pdf24_10 pdf24_06 pdf24_30" style="word-spacing:0.0042em;">Continued use of the Platform after updates constitutes acceptance of the revised Policy. &nbsp;</span></div>
-				</div>
-			</div>
-		</div>
-		<div class="pdf24_ pdf24_02">
-			<div class="pdf24_60">
-				<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAxkAAARhCAYAAABONUjdAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAN20lEQVR4nO3SsQ2CQBiAUfawk8ZeY02InFg6AVNIjlh64dZ2CeMf8b3k2+BrGgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4qiHXe1rWSZvuEP0ZAAB/5DqX85hrp+3WP8su+jMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACHHJdT/m2im22+PVRr8AAAAfkXI9pmWdFNswl1P0CwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/5A1sarsbxRPx/gAAAABJRU5ErkJgggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" alt="" class="pdf24_61" />
-			</div>
-			<div class="pdf24_view">
-				<div class="pdf24_03 pdf24_04">
-					<div class="pdf24_01" style="left:6.002em;top:5.9652em;"><span class="pdf24_05 pdf24_06 pdf24_30" style="word-spacing:0.0059em;">16. Grievance Redressal and Contact &nbsp;</span></div>
-					<div class="pdf24_01" style="left:9.0017em;top:7.8552em;"><span class="pdf24_10 pdf24_06 pdf24_45" style="word-spacing:0.0004em;">For privacy-related queries, rights requests, or complaints: &nbsp;</span></div>
-					<div class="pdf24_01" style="left:7.502em;top:7.8405em;"><span class="pdf24_27 pdf24_28 pdf24_16">•</span></div>
-					<div class="pdf24_01" style="left:10.5017em;top:9.874em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
-					<div class="pdf24_01" style="left:10.5017em;top:11.754em;"><span class="pdf24_34 pdf24_35 pdf24_16">o</span></div>
-					<div class="pdf24_01" style="left:12.0017em;top:9.7452em;"><span class="pdf24_05 pdf24_06 pdf24_26" style="word-spacing:-0.0018em;">Email: </span><a href="mailto:support@alabty.com" target="_blank"><span class="pdf24_62 pdf24_06 pdf24_63">support@alabty.com &nbsp;</span></a></div>
-					<div class="pdf24_01" style="left:12.0017em;top:11.6252em;"><span class="pdf24_05 pdf24_06 pdf24_64" style="word-spacing:0.0266em;">Website: </span><a href="http://www.alabty.com/" target="_blank"><span class="pdf24_62 pdf24_06 pdf24_65">www.alabty.com &nbsp;</span></a></div>
-					<div class="pdf24_01" style="left:6.002em;top:13.5152em;"><span class="pdf24_10 pdf24_06 pdf24_37" style="word-spacing:-0.003em;">By using the Platform, you acknowledge that you have read, understood, and agreed to this Privacy &nbsp;</span></div>
-					<div class="pdf24_01" style="left:6.002em;top:14.7352em;"><span class="pdf24_10 pdf24_06 pdf24_19" style="word-spacing:-0.0028em;">Policy in compliance with the Digital Personal Data Protection Act, 2023. &nbsp;</span></div>
-				</div>
-			</div>
-		</div>
+		</footer>
 	</body>
 </html>

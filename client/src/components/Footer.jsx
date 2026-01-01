@@ -52,40 +52,19 @@ const Footer = () => {
 
   return (
     <footer className="bg-[#24324a] text-white mt-auto">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 md:pt-16 pb-0">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
-          {/* Company Info */}
-          <div className="lg:col-span-2">
-            <div className="mb-4">
-              <img src={logo} alt="alabty Logo" className="h-12 w-auto" />
-            </div>
-            <p className="text-gray-300 mb-6 leading-relaxed max-w-md">
-              Your Complete Recruitment Engine – Automated, Accurate, Unstoppable
-            </p>
-            
-            {/* Social Icons */}
-            <div className="flex space-x-4">
-              {socialLinks.map((social, index) => (
-                <motion.a
-                  key={index}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-300 hover:text-white hover:bg-primary transition-colors duration-200"
-                  aria-label={social.name}
-                >
-                  {social.icon}
-                </motion.a>
-              ))}
-            </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 md:pt-6 pb-0">
+        {/* Company Info */}
+        <div className="text-center">
+          <div className="mb-4 flex justify-center">
+            <img src={logo} alt="alabty Logo" className="h-12 w-auto" />
           </div>
-
+          <p className="text-gray-300 mb-6 leading-relaxed mx-auto">
+            Your Complete Recruitment Engine – Automated, Accurate, Unstoppable
+          </p>
+          
           {/* Quick Links */}
-          <div>
-            <h4 className="text-base font-semibold text-white mb-5">Quick Links</h4>
-            <ul className="space-y-3">
+          <div className="mb-6">
+            <ul className="flex justify-center space-x-4 text-sm">
               <li>
                 <a
                   href="#hero"
@@ -93,11 +72,12 @@ const Footer = () => {
                     e.preventDefault()
                     document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' })
                   }}
-                  className="text-sm text-gray-300 hover:text-white transition-colors duration-200 inline-block hover:translate-x-1 transform transition-transform cursor-pointer"
+                  className="text-gray-300 hover:text-white transition-colors duration-200 cursor-pointer"
                 >
                   Home
                 </a>
               </li>
+              <li className="text-gray-300">|</li>
               <li>
                 <a
                   href="#features"
@@ -105,11 +85,12 @@ const Footer = () => {
                     e.preventDefault()
                     document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })
                   }}
-                  className="text-sm text-gray-300 hover:text-white transition-colors duration-200 inline-block hover:translate-x-1 transform transition-transform cursor-pointer"
+                  className="text-gray-300 hover:text-white transition-colors duration-200 cursor-pointer"
                 >
                   Features
                 </a>
               </li>
+              <li className="text-gray-300">|</li>
               <li>
                 <a
                   href="#faq"
@@ -117,58 +98,55 @@ const Footer = () => {
                     e.preventDefault()
                     document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth' })
                   }}
-                  className="text-sm text-gray-300 hover:text-white transition-colors duration-200 inline-block hover:translate-x-1 transform transition-transform cursor-pointer"
+                  className="text-gray-300 hover:text-white transition-colors duration-200 cursor-pointer"
                 >
                   FAQ
                 </a>
               </li>
-            </ul>
-          </div>
-
-          {/* Support */}
-          <div>
-            <h4 className="text-base font-semibold text-white mb-5">Support</h4>
-            <ul className="space-y-3">
-              <li>
-                <a
-                  href="#"
-                  className="text-sm text-gray-300 hover:text-white transition-colors duration-200 inline-block hover:translate-x-1 transform transition-transform"
-                >
-                  Help Center
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-sm text-gray-300 hover:text-white transition-colors duration-200 inline-block hover:translate-x-1 transform transition-transform"
-                >
-                  Contact Us
-                </a>
-              </li>
+              <li className="text-gray-300">|</li>
               <li>
                 <a
                   href="/Privacy-Policy-alabty.html"
-                  className="text-sm text-gray-300 hover:text-white transition-colors duration-200 inline-block hover:translate-x-1 transform transition-transform"
+                  className="text-gray-300 hover:text-white transition-colors duration-200"
                 >
                   Privacy Policy
                 </a>
               </li>
+              <li className="text-gray-300">|</li>
               <li>
                 <a
                   href="/Terms-and-Conditions-alabty.html"
-                  className="text-sm text-gray-300 hover:text-white transition-colors duration-200 inline-block hover:translate-x-1 transform transition-transform"
+                  className="text-gray-300 hover:text-white transition-colors duration-200"
                 >
                   Terms of Service
                 </a>
               </li>
             </ul>
           </div>
-        </div>
 
-        {/* Copyright */}
-        <p className="mt-12 text-sm text-gray-300 text-center">
-          © 2025 alabty. All rights reserved.
-        </p>
+          {/* Social Icons */}
+          <div className="flex justify-center space-x-4 mb-8">
+            {socialLinks.map((social, index) => (
+              <motion.a
+                key={index}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-300 hover:text-white hover:bg-primary transition-colors duration-200"
+                aria-label={social.name}
+              >
+                {social.icon}
+              </motion.a>
+            ))}
+          </div>
+
+          {/* Copyright */}
+          <p className="text-sm text-gray-300 text-center">
+            © 2025 alabty. All rights reserved.
+          </p>
+        </div>
         <div className="mt-6 border-t border-gray-800" />
       </div>
     </footer>
