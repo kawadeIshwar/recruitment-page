@@ -667,13 +667,77 @@
 		body {
 			margin: 0;
 			padding: 0;
+			overflow-x: hidden;
 		}
 		@media (max-width: 768px) {
 			.tagline { display: none; }
 			.header-buttons { gap: 0.5rem; }
 			.btn-login, .btn-signup { padding: 0.5rem 1rem; font-size: 13px; }
 		}
-	</STYLE>
+		@media (max-width: 1024px) {
+			.pdf24_02 {
+				width: 90%;
+				max-width: 49.58333em;
+				padding: 0 1rem;
+			}
+			.pdf24_view {
+				font-size: 8em;
+			}
+		}
+		@media (max-width: 768px) {
+			.tagline { display: none; }
+			.header-buttons { gap: 0.5rem; }
+			.btn-login, .btn-signup { padding: 0.5rem 1rem; font-size: 13px; }
+			
+			.pdf24_02 {
+				width: 95%;
+				padding: 0 0.5rem;
+			}
+			.pdf24_view {
+				font-size: 6em;
+			}
+			.pdf24_01 {
+				white-space: normal;
+				word-wrap: break-word;
+			}
+			
+			.footer-links {
+				flex-direction: column;
+				gap: 0.5rem;
+			}
+			.footer-separator {
+				display: none;
+			}
+			.footer-logo {
+				height: 36px;
+			}
+			.social-links {
+				gap: 1rem;
+			}
+		}
+		@media (max-width: 480px) {
+			.header-content {
+				flex-direction: column;
+				gap: 1rem;
+			}
+			.logo {
+				height: 32px;
+			}
+			.pdf24_view {
+				font-size: 5em;
+			}
+			.pdf24_02 {
+				width: 100%;
+				padding: 0 0.25rem;
+			}
+			.footer-tagline {
+				font-size: 14px;
+			}
+			.footer-copyright {
+				font-size: 12px;
+			}
+		}
+</STYLE>
 	</head>
 	<body>
 		<!-- Header -->
@@ -681,7 +745,7 @@
 			<div class="header-container">
 				<div class="header-content">
 					<a href="/">
-						<img src="/src/assets/logo.png" alt="alabty Logo" class="logo" />
+						<img src="/logo.png" alt="alabty Logo" class="logo" />
 					</a>
 					<div class="tagline">
 						Your Complete Recruitment Engine – Automated, Accurate, Unstoppable
